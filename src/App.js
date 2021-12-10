@@ -2,7 +2,8 @@ import './index.css'
 
 function App() {
   return (
-    <div className="text-blue-300">Hello everyone</div>
+    <div className="max-h-[85vh] max-w-[1370px] w-screen h-screen bg-white grow self-stretch rounded-md shadow-xl">
+    </div>
   );
 }
 
