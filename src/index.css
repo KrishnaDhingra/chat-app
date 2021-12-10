@@ -21,5 +21,25 @@ body {
 }
 .other-users-container{
   display: grid;
-  grid-template-rows: 210px 100px 1fr;
+  grid-template-rows: 190px 140px 1fr;
+}
+.online-dots{
+  width: 1px;
+  height: 1px;
+}
+.users-online::before{
+  content: '';
+  position: absolute;
+  width: 90%;
+  top: 0;
+  height: 1px;
+  background-color:#f0ece8;
+}
+.users-online::after{
+  content: '';
+  position: absolute;
+  width: 90%;
+  bottom: 0;
+  height: 2px;
+  background-color:#f0ece8;
 }
