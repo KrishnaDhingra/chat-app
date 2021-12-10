@@ -43,3 +43,12 @@ body {
   height: 2px;
   background-color:#f0ece8;
 }
+.chat-preview::before{
+  content: '';
+  position: absolute;
+  width: 90%;
+  bottom: 0;
+  left: 0;
+  height: 2px;
+  background-color:#f0ece8;
+}
