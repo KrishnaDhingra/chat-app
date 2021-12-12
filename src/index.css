@@ -15,13 +15,31 @@ body {
   align-items: center;
   font-family: 'Poppins', sans-serif;
 }
+.chats-container::-webkit-scrollbar {
+  width: 3.5px;
+}
+
+/* Track */
+.chats-container::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+.chats-container::-webkit-scrollbar-thumb {
+  background: rgb(214, 214, 214);
+}
+
+/* Handle on hover */
+.chats-container::-webkit-scrollbar-thumb:hover {
+  background: rgb(182, 182, 182);
+}
 .main-container{
   display: grid;
   grid-template-columns: 70px 360px 1fr;
 }
 .other-users-container{
   display: grid;
-  grid-template-rows: 190px 140px 1fr;
+  grid-template-rows: 190px 140px 367px;
 }
 .online-dots{
   width: 1px;
@@ -46,9 +64,8 @@ body {
 .chat-preview::before{
   content: '';
   position: absolute;
-  width: 90%;
+  width: 100%;
   bottom: 0;
   left: 0;
-  height: 2px;
-  background-color:#f0ece8;
+  border-top: 2px solid #f0ece8;
 }
