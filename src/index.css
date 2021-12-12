@@ -20,18 +20,27 @@ body {
 }
 
 /* Track */
-.chats-container::-webkit-scrollbar-track {
+.chats-container::-webkit-scrollbar-track, .main-chats-container::-webkit-scrollbar-track {
   background: #f1f1f1;
 }
-
 /* Handle */
 .chats-container::-webkit-scrollbar-thumb {
-  background: rgb(214, 214, 214);
+  background: rgb(185, 185, 185);
 }
 
 /* Handle on hover */
 .chats-container::-webkit-scrollbar-thumb:hover {
   background: rgb(182, 182, 182);
+}
+.main-chats-container::-webkit-scrollbar {
+  width: 8.5px;
+}
+/* Handle */
+.main-chats-container::-webkit-scrollbar-thumb {
+  background: rgb(190, 190, 190);
+}
+.main-chats-container::-webkit-scrollbar-thumb:hover {
+  background: rgb(158, 158, 158);
 }
 .main-container{
   display: grid;

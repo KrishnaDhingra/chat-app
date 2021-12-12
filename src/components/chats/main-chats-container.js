@@ -5,7 +5,7 @@ import InnerChatsContainer from './inner-chats-container'
 
 export default function MainChatsContainer() {
     return (
-        <div className="h-full w-full p-10 flex flex-col gap-7 rounded-r-md m-0">
+        <div className="main-chats-container h-full w-full p-10 flex flex-col gap-7 rounded-r-md m-0 overflow-y-auto">
             <SearchBar/>
             <ChatWith/>
             <InnerChatsContainer/>
