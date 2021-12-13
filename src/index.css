@@ -4,6 +4,45 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer base{
+  :root {
+    --color-navbar-bg: #268D61;
+    --color-text-primary: #1f2937;
+    --color-text-secondary: #9ca3af;
+    --color-text-chat-secondary: #CDC3BA;
+    --color-chat-primary: #CDC3BA;
+    --color-chat-secondary: #110F0F;
+    --color-body-bg-primary: #e4ddd7;
+    --color-body-bg-secondary: #ffffff;
+    --color-chat-container: #FFFFFF;
+    --color-border-primary: #f0ece8;
+    
+  }
+}
+.theme-light {
+    --color-text-primary: #1f2937;
+    --color-text-secondary: #9ca3af;
+    --color-chat-primary: #CDC3BA;
+    --color-text-chat-secondary: #CDC3BA;
+    --color-chat-secondary: #110F0F;
+    --color-body-bg-primary: #e4ddd7;
+    --color-body-bg-secondary: #1A1A1A;
+    --color-chat-container: #FFFFFF;
+    --color-border-primary: #f0ece8;
+    
+  }
+  .theme-dark {
+    --color-text-primary: #FFFFFF;
+    --color-text-secondary: #9ca3af;
+    --color-chat-primary: #268D61;
+    --color-chat-secondary: #565A51;
+    --color-text-chat-secondary: #FFFFFF;
+    --color-body-bg-primary: #e4ddd7;
+    --color-body-bg-secondary: #ffffff;
+    --color-chat-container: #1F1F1F;
+    --color-border-primary: #f0ece8;
+  }
+
 body {
   margin: 0;
   font-family: 'Courier New', Courier, monospace;
