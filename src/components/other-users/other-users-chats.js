@@ -4,7 +4,7 @@ export default function OtherUsersChats() {
     return (
         <div className="chats-container pl-8 pr-6 pt-6 flex flex-col gap-3 h-full w-full  overflow-y-auto">
             <h2 className="font-semibold">Chats</h2>
-            <input placeholder="Search for chats" type="text" className="w-full py-2 px-3 outline-none border border-gray-200 rounded-md placeholder:text-sm"/>
+            <input placeholder="Search for chats" type="text" className="w-full py-2 px-3 outline-none border border-gray-200 rounded-md focus:border-[#268D61] placeholder:text-sm"/>
 
             <div className="mt-5">
                 <ChatPreview/>
