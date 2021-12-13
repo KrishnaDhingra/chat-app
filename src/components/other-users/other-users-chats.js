@@ -17,7 +17,7 @@ export default function OtherUsersChats() {
 
 function ChatPreview() {
     return (
-        <div className="relative chat-preview h-[55px] pb-[10px] w-full bg-gray-chat-preview flex gap-3 mb-2 hover:bg-gray-100">
+        <div className="relative chat-preview h-[65px] py-3 w-full bg-gray-chat-preview flex gap-3 hover:bg-gray-100">
             <img src="https://images.unsplash.com/photo-1527980965255-d3b416303d12?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=580&q=80" alt="other users dp" className="h-full aspect-square rounded-full" />
             <div className="h-full justify-center flex flex-col grow">
                 <span className="font-semibold text-sm text-gray-800">Sachin Dhingra</span>
