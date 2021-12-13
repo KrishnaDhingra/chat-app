@@ -46,9 +46,12 @@ body {
   display: grid;
   grid-template-columns: 70px 360px 1fr;
 }
+.outer-chat-container{
+  grid-template-rows: 40px 1fr 40px;
+}
 .other-users-container{
   display: grid;
-  grid-template-rows: 190px 140px 367px;
+  grid-template-rows: 190px 140px 1fr;
 }
 .online-dots{
   width: 1px;

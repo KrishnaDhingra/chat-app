@@ -9,7 +9,6 @@ function App() {
       <Navbar/>
       <OtherUsersContainer/>
       <MainChatsContainer/>
-      <div className="h-full w-full bg-white rounded-r-md"></div>
     </div>
   );
 }
