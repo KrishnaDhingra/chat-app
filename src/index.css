@@ -16,10 +16,9 @@
     --color-body-bg-secondary: #ffffff;
     --color-chat-container: #FFFFFF;
     --color-border-primary: #f0ece8;
-    --color-other-user-container: transparent;
+    --color-other-user-container: #FFFFFF;
     --color-input-bg: #f9fafb;
     --color-mode-switcher-bg: #f3f4f6;
-    
   }
 }
 .theme-light {
@@ -32,7 +31,7 @@
     --color-body-bg-secondary: #1A1A1A;
     --color-chat-container: #FFFFFF;
     --color-border-primary: #f0ece8;
-    --color-other-user-container: transparent;
+    --color-other-user-container: #FFFFFF;
     --color-input-bg: #f9fafb;
     --color-mode-switcher-bg: #f3f4f6;
     
