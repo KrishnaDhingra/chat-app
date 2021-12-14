@@ -15,14 +15,14 @@ export default function ModeSwitcher() {
             if(side === 'left'){
                 setsunColor('black')
                 setmoonColor('white')
-            }else{
-                setmoonColor('black')
-                setsunColor('white')
+                return
             }
+            setmoonColor('black')
+            setsunColor('white')
         }
     }, [side])
     return (
-        <div className="relative w-24 bg-gray-100 rounded-md flex justify-between px-4 py-2 items-center">
+        <div className="relative w-24 bg-modeswithcerBg rounded-md flex justify-between px-4 py-2 items-center">
             <BiSun onClick={() => setSide('left')} className={`text-${sunColor} z-10`}/>
             <RiMoonLine onClick={() => setSide('right')} className={`text-${moonColor} z-10`}/>
             <motion.div className={`absolute h-full ${side}-0 z-0 w-1/2 rounded-md bg-navbarBg`}>

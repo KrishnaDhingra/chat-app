@@ -5,7 +5,7 @@ export default function OtherUsersOnline() {
         <div className="users-online relative h-full w-full pl-8 pr-7 flex flex-col justify-center gap-2 bg-transparent">
             <div className="flex justify-between">
                 <h2 className="text-primary font-semibold">Online Now</h2>
-                <span className="bg-gray-100 rounded-md py-1 px-2 text-xs text-primary font-semibold">12</span>
+                <span className="bg-inputBg rounded-md py-1 px-2 text-xs text-primary font-semibold">12</span>
             </div>
             <div className="flex gap-4 justify-start mt-3">
                 <div className="relative w-[45px] h-[45px]">

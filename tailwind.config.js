@@ -15,7 +15,10 @@ module.exports = {
         navbarBg: 'var(--color-navbar-bg)',
         chatPrimary: 'var(--color-chat-primary)',
         chatSecondary: 'var(--color-chat-secondary)',
-        chatContainer: 'var(--color-chat-container)'
+        chatContainer: 'var(--color-chat-container)',
+        otheruserContainer: 'var(--color-other-user-container)',
+        inputBg: 'var(--color-input-bg)',
+        modeswithcerBg: 'var(--color-mode-switcher-bg)',
       },
       borderColor: {
         primary: 'var(--color-border-primary)',

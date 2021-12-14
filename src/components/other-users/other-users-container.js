@@ -5,7 +5,7 @@ import OtherUsersChats from './other-users-chats.js'
 
 export default function OtherUsersContainer() {
     return (
-        <div className="bg-gradient-to-b from-gray-100 via-white to-white other-users-container w-full max-h-[92vh]">
+        <div className="bg-otheruserContainer other-users-container w-full max-h-[92vh]">
             <OtherUsersInfo/>
             <OtherUsersOnline/>
             <OtherUsersChats/>

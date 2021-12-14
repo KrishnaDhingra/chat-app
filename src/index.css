@@ -16,6 +16,9 @@
     --color-body-bg-secondary: #ffffff;
     --color-chat-container: #FFFFFF;
     --color-border-primary: #f0ece8;
+    --color-other-user-container: transparent;
+    --color-input-bg: #f9fafb;
+    --color-mode-switcher-bg: #f3f4f6;
     
   }
 }
@@ -29,21 +32,27 @@
     --color-body-bg-secondary: #1A1A1A;
     --color-chat-container: #FFFFFF;
     --color-border-primary: #f0ece8;
+    --color-other-user-container: transparent;
+    --color-input-bg: #f9fafb;
+    --color-mode-switcher-bg: #f3f4f6;
     
   }
   .theme-dark {
     --color-text-primary: #FFFFFF;
-    --color-text-secondary: #9ca3af;
+    --color-text-secondary: #737373;
     --color-chat-primary: #268D61;
     --color-chat-secondary: #565A51;
     --color-text-chat-secondary: #FFFFFF;
     --color-body-bg-primary: #e4ddd7;
     --color-body-bg-secondary: #ffffff;
     --color-chat-container: #1F1F1F;
-    --color-border-primary: #f0ece8;
+    --color-other-user-container: #1C1C1C;
+    --color-border-primary: #4b5563;
+    --color-input-bg: #262626;
+    --color-mode-switcher-bg: #262626;
   }
-
-body {
+  
+  body {
   margin: 0;
   font-family: 'Courier New', Courier, monospace;
   background-color: #e4ddd7;
@@ -102,15 +111,15 @@ body {
   width: 90%;
   top: 0;
   height: 1px;
-  background-color:#f0ece8;
+  background-color:var(--color-border-primary);
 }
 .users-online::after{
   content: '';
   position: absolute;
   width: 90%;
   bottom: 0;
-  height: 2px;
-  background-color:#f0ece8;
+  height: 1px;
+  background-color:var(--color-border-primary)
 }
 .chat-preview::before{
   content: '';
@@ -118,5 +127,8 @@ body {
   width: 100%;
   bottom: 0;
   left: 0;
-  border-top: 2px solid #f0ece8;
+  border-top: 1.6px solid var(--color-border-primary);
+}
+.chat-preview:hover{
+  background-color: rgba(64,64,64, 0.3);
 }
