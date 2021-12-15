@@ -5,7 +5,7 @@ import ChatWith from './chatwith'
 
 export default function InnerChatsContainer() {
     return (
-        <div className="main-chats-container w-full h-full flex flex-col gap-2  pr-10 overflow-y-auto">
+        <div className="main-chats-container sm:w-full h-full flex flex-col gap-2  pr-4 sm:pr-10 overflow-y-auto">
                 <ChatWith/>
                 <UserChat/>
                 <OtherUserChat/>

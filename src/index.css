@@ -100,8 +100,22 @@
   grid-template-rows: 40px 1fr 40px;
 }
 .other-users-container{
-  display: grid;
   grid-template-rows: 190px 140px 1fr;
+}
+@media only screen and (max-width: 1024px) {
+  .main-container{
+    grid-template-columns: 70px 1fr;
+  }
+}
+@media only screen and (max-width: 640px) {
+  .main-container{
+    grid-template-columns: 1fr;
+  }
+}
+@media only screen and (max-width: 400px) {
+  .chats{
+    max-width: 270px;
+  }
 }
 .online-dots{
   width: 1px;
