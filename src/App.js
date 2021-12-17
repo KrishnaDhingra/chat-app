@@ -7,10 +7,12 @@ import MainChatsContainer from './components/chats/main-chats-container';
 function App() {
 
   const [ theme, setTheme ] = useState('theme-dark')
+  const [otherUsersContainerDisplay, setotherUsersContainerDisplay] = useState('grid')
+  const [mainContainerDisplay, setmainContainerDisplay] = useState('hidden')
+
   const toggleTheme = () => {
     if(theme == 'theme-dark'){return setTheme('theme-light')}
     setTheme('theme-dark')
-    console.log(theme)
   }
   
   return (
