@@ -1,7 +1,6 @@
 import React from 'react'
 import SignupHeader from './header'
 import SignupInputContainer from './signup-input-container'
-import SignupPlatforms from './signup-platforms'
 
 export default function SignupContainer() {
     return (
