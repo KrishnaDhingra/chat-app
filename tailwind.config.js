@@ -18,11 +18,13 @@ module.exports = {
         chatContainer: 'var(--color-chat-container)',
         otheruserContainer: 'var(--color-other-user-container)',
         inputBg: 'var(--color-input-bg)',
+        logininputBg: 'var(--color-login-input-bg)',
         modeswithcerBg: 'var(--color-mode-switcher-bg)',
       },
       borderColor: {
         primary: 'var(--color-border-primary)',
-        focus: 'var(--color-navbar-bg)'
+        focus: 'var(--color-navbar-bg)',
+        loginInput: 'var(--color-login-input-border)'
       }
     },
 

@@ -18,6 +18,8 @@
     --color-border-primary: #f0ece8;
     --color-other-user-container: #FFFFFF;
     --color-input-bg: #f3f4f6;
+    --color-login-input-bg: transparent;
+    --color-login-input-border: black;
     --color-mode-switcher-bg: #f3f4f6;
     --color-chat-preview-hover: #f3f4f6;
   }
@@ -34,6 +36,8 @@
     --color-border-primary: #f0ece8;
     --color-other-user-container: #FFFFFF;
     --color-input-bg: #f3f4f6;
+    --color-login-input-bg: transparent;
+    --color-login-input-border: black;
     --color-mode-switcher-bg: #f3f4f6;
     --color-chat-preview-hover: #f3f4f6;
     
@@ -50,6 +54,8 @@
     --color-other-user-container: #1C1C1C;
     --color-border-primary: #4b5563;
     --color-input-bg: #262626;
+    --color-login-input-bg: #262626;
+    --color-login-input-border: transparent;
     --color-mode-switcher-bg: #262626;
     --color-chat-preview-hover: rgba(64,64,64, 0.3);
   }

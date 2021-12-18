@@ -4,9 +4,9 @@ import SignupPlatforms from './signup-platforms'
 
 export default function SignupInputContainer() {
     return (
-        <div className="flex items-center gap-10 bg-green-400">
+        <div className="flex flex-col sm:flex-row items-center gap-14 px-6 max-w-[52rem] w-screen">
             <SignupCredentials/>
-            <div className="">/</div>
+            <div className="hidden sm:inline font-bold text-primary">/</div>
             <SignupPlatforms/>
         </div>
     )
