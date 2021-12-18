@@ -2,6 +2,7 @@ import React from "react"
 import { FiSettings } from "react-icons/fi"
 
 export default function OtherUsersInfo() {
+
     return (
         <section className="relative w-full z-0 h-full flex items-center justify-center flex-col bg-transparent">
             <FiSettings className="text-primary absolute top-7 right-7"/>
