@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { BsArrowRight } from "react-icons/bs";
 
 export default function SignupCredentials() {
     const [ id, setId ] = useState('')
@@ -24,8 +25,8 @@ export default function SignupCredentials() {
 
             <button 
             type='submit'
-            className="bg-[#00E99F] rounded px-4 py-4 border-2 border-transparent font-semibold text-left"
-            >Login to you Account</button>
+            className="flex justify-between items-center bg-[#00E99F] rounded px-4 py-4 border-2 border-transparent font-semibold text-left"
+            >Login to you Account <BsArrowRight className="text-xl"/></button>
         </form>   
     )
 }
