@@ -19,7 +19,7 @@ export default function ModeSwitcher(props) {
         setsunColor('white')
     }, [side])
     return (
-        <div className="relative w-24 bg-modeswithcerBg rounded-md flex justify-between px-4 py-2 items-center">
+        <aside className="relative w-24 bg-modeswithcerBg rounded-md flex justify-between px-4 py-2 items-center">
             <RiMoonLine 
                 onClick={
                     () => {
@@ -37,10 +37,10 @@ export default function ModeSwitcher(props) {
                     }
                 } 
                 className={`text-${sunColor} z-10`}/>
-            <motion.div 
+            <motion.section 
                  layout 
                  className={`absolute h-full m-0 p-0 ${side === 'left' ? 'left-0' : null} ${side}-0 z-0 w-1/2 rounded-md bg-navbarBg`}>
-            </motion.div>
-        </div>
+            </motion.section>
+        </aside>
     )
 }

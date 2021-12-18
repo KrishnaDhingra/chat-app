@@ -2,7 +2,7 @@ import React from 'react'
 
 export default function OtherUsersOnline() {
     return (
-        <div className="users-online relative h-full w-full pl-8 pr-7 flex flex-col justify-center gap-2 bg-transparent">
+        <section className="users-online relative h-full w-full pl-8 pr-7 flex flex-col justify-center gap-2 bg-transparent">
             <div className="flex justify-between">
                 <h2 className="text-primary font-semibold">Online Now</h2>
                 <span className="bg-inputBg rounded-md py-1 px-2 text-xs text-primary font-semibold">12</span>
@@ -34,6 +34,6 @@ export default function OtherUsersOnline() {
                     <div className="online dots rounded-full bg-red-500 p-1 absolute bottom-0 right-0 border-2 border-white"></div>
                 </div>
             </div>
-        </div>
+        </section>
     )
 }
