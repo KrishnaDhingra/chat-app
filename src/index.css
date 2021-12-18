@@ -9,6 +9,7 @@
     --color-navbar-bg: #268D61;
     --color-text-primary: #1f2937;
     --color-text-secondary: #9ca3af;
+    --header-text: #1f2937; 
     --color-text-chat-secondary: #CDC3BA;
     --color-chat-primary: #CDC3BA;
     --color-chat-secondary: #110F0F;
@@ -27,6 +28,7 @@
 .theme-light {
     --color-text-primary: #1f2937;
     --color-text-secondary: #9ca3af;
+    --header-text: #1f2937; 
     --color-chat-primary: #CDC3BA;
     --color-text-chat-secondary: #CDC3BA;
     --color-chat-secondary: #110F0F;
@@ -45,6 +47,7 @@
   .theme-dark {
     --color-text-primary: #FFFFFF;
     --color-text-secondary: #737373;
+    --header-text: #a3a3a3; 
     --color-chat-primary: #268D61;
     --color-chat-secondary: #565A51;
     --color-text-chat-secondary: #FFFFFF;

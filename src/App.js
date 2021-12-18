@@ -27,7 +27,7 @@ function App() {
         />
         <Route 
         path="/signup" 
-        element={<SignupContainer/>}/>
+        element={<SignupContainer theme={theme}/>}/>
       </Routes>
     </BrowserRouter>
   );

@@ -11,14 +11,14 @@ export default function SignupCredentials() {
             <input 
             placeholder="Teacher / Student Id" 
             type="text" 
-            className="rounded border-2 px-4 py-4 border-loginInput placeholder:text-primary outline-none bg-inputBg focus:border-focus"
+            className="rounded text-primary border-2 px-4 py-4 border-loginInput placeholder:text-primary outline-none bg-logininputBg focus:border-focus"
             onChange={(e) => setId(e.target.value)} 
             value={id}/>
 
             <input 
             placeholder="8 Digit Pin" 
             type="password" 
-            className="rounded border-2 px-4 py-4 border-loginInput outline-none bg-inputBg placeholder:text-primary focus:border-focus"
+            className="rounded text-primary border-2 px-4 py-4 border-loginInput outline-none bg-logininputBg placeholder:text-primary focus:border-focus"
             onChange={(e) => setPin(e.target.value)} 
             value={pin}/>
 

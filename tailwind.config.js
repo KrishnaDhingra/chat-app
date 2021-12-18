@@ -7,7 +7,8 @@ module.exports = {
       textColor: {
         primary: 'var(--color-text-primary)',
         secondary: 'var(--color-text-secondary)',
-        chatSecondary: 'var(--color-text-chat-secondary)'
+        chatSecondary: 'var(--color-text-chat-secondary)',
+        headerText: 'var(--header-text)'
       },
       backgroundColor: {
         primary: 'var(--color-body-bg-primary)',
