@@ -157,3 +157,17 @@
 .chat-preview:hover{
   background-color: var(--color-chat-preview-hover);
 }
+.sign-up-platform-button{
+  background: linear-gradient(45deg, var(--color-other-user-container), var(--color-other-user-container)) padding-box,
+  linear-gradient(45deg, rgba(128, 28, 128, 0.5), rgba(223, 167, 65, 0.5)) border-box;
+  border-color: transparent;
+  border-width: 1.8px;
+  border-radius: 0.3rem;
+}
+.sign-up-facebook{
+  background: linear-gradient(45deg, var(--color-other-user-container), var(--color-other-user-container)) padding-box,
+  linear-gradient(45deg, rgba(223, 167, 65, 0.5), rgba(128, 28, 128, 0.5)) border-box; 
+}
+.signup-submit-button{
+  background: linear-gradient(45deg,#9C3B91, #DB3151, #F84233) border-box;
+}
