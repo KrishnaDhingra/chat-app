@@ -23,14 +23,17 @@
     --color-login-input-border: black;
     --color-mode-switcher-bg: #f3f4f6;
     --color-chat-preview-hover: #f3f4f6;
+    --color-signup-submit-button: #08E7A0;
+    --color-signup-platforms-border: black;
+    --color-signup-platforms-border-reverse: black;
   }
 }
 .theme-light {
-    --color-text-primary: #1f2937;
-    --color-text-secondary: #9ca3af;
-    --header-text: #1f2937; 
-    --color-chat-primary: #CDC3BA;
-    --color-text-chat-secondary: #CDC3BA;
+  --color-text-primary: #1f2937;
+  --color-text-secondary: #9ca3af;
+  --header-text: #1f2937; 
+  --color-chat-primary: #CDC3BA;
+  --color-text-chat-secondary: #CDC3BA;
     --color-chat-secondary: #110F0F;
     --color-body-bg-primary: #e4ddd7;
     --color-body-bg-secondary: #1A1A1A;
@@ -42,6 +45,11 @@
     --color-login-input-border: black;
     --color-mode-switcher-bg: #f3f4f6;
     --color-chat-preview-hover: #f3f4f6;
+    --color-signup-submit-button: #08E7A0;
+    --color-signup-platforms-border:  linear-gradient(45deg, var(--color-other-user-container), var(--color-other-user-container)) padding-box,
+    linear-gradient(45deg, black, black) border-box;;
+    --color-signup-platforms-border-reverse: linear-gradient(45deg, var(--color-other-user-container), var(--color-other-user-container)) padding-box,
+    linear-gradient(45deg, black, black) border-box; 
     
   }
   .theme-dark {
@@ -61,14 +69,19 @@
     --color-login-input-border: transparent;
     --color-mode-switcher-bg: #262626;
     --color-chat-preview-hover: rgba(64,64,64, 0.3);
+    --color-signup-submit-button: linear-gradient(45deg,#9C3B91, #DB3151, #F84233) border-box;
+    --color-signup-platforms-border:  linear-gradient(45deg, var(--color-other-user-container), var(--color-other-user-container)) padding-box,
+    linear-gradient(45deg, rgba(128, 28, 128, 0.5), rgba(223, 167, 65, 0.5)) border-box;;
+    --color-signup-platforms-border-reverse: linear-gradient(45deg, var(--color-other-user-container), var(--color-other-user-container)) padding-box,
+    linear-gradient(45deg, rgba(223, 167, 65, 0.5), rgba(128, 28, 128, 0.5)) border-box; 
   }
   
   body {
-  margin: 0;
-  font-family: 'Courier New', Courier, monospace;
-  background-color: #e4ddd7;
-  height: 100vh;
-  width: 100vw;
+    margin: 0;
+    font-family: 'Courier New', Courier, monospace;
+    background-color: #e4ddd7;
+    height: 100vh;
+    width: 100vw;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -158,15 +171,13 @@
   background-color: var(--color-chat-preview-hover);
 }
 .sign-up-platform-button{
-  background: linear-gradient(45deg, var(--color-other-user-container), var(--color-other-user-container)) padding-box,
-  linear-gradient(45deg, rgba(128, 28, 128, 0.5), rgba(223, 167, 65, 0.5)) border-box;
+  background: var(--color-signup-platforms-border);
   border-color: transparent;
   border-radius: 0.3rem;
 }
 .sign-up-facebook{
-  background: linear-gradient(45deg, var(--color-other-user-container), var(--color-other-user-container)) padding-box,
-  linear-gradient(45deg, rgba(223, 167, 65, 0.5), rgba(128, 28, 128, 0.5)) border-box; 
+  background: var(--color-signup-platforms-border-reverse);
 }
 .signup-submit-button{
-  background: linear-gradient(45deg,#9C3B91, #DB3151, #F84233) border-box;
+  background: var(--color-signup-submit-button)
 }
