@@ -34,47 +34,47 @@
   --header-text: #1f2937; 
   --color-chat-primary: #CDC3BA;
   --color-text-chat-secondary: #CDC3BA;
-    --color-chat-secondary: #110F0F;
-    --color-body-bg-primary: #e4ddd7;
-    --color-body-bg-secondary: #1A1A1A;
-    --color-chat-container: #FFFFFF;
-    --color-border-primary: #f0ece8;
-    --color-other-user-container: #FFFFFF;
-    --color-input-bg: #f3f4f6;
-    --color-login-input-bg: transparent;
-    --color-login-input-border: black;
-    --color-mode-switcher-bg: #f3f4f6;
-    --color-chat-preview-hover: #f3f4f6;
-    --color-signup-submit-button: #08E7A0;
-    --color-signup-platforms-border:  linear-gradient(45deg, var(--color-other-user-container), var(--color-other-user-container)) padding-box,
-    linear-gradient(45deg, black, black) border-box;;
-    --color-signup-platforms-border-reverse: linear-gradient(45deg, var(--color-other-user-container), var(--color-other-user-container)) padding-box,
-    linear-gradient(45deg, black, black) border-box; 
-    
-  }
-  .theme-dark {
-    --color-text-primary: #FFFFFF;
-    --color-text-secondary: #737373;
-    --header-text: #a3a3a3; 
-    --color-chat-primary: #268D61;
-    --color-chat-secondary: #565A51;
-    --color-text-chat-secondary: #FFFFFF;
-    --color-body-bg-primary: #e4ddd7;
-    --color-body-bg-secondary: #ffffff;
-    --color-chat-container: #1F1F1F;
-    --color-other-user-container: #1C1C1C;
-    --color-border-primary: #4b5563;
-    --color-input-bg: #262626;
-    --color-login-input-bg: #262626;
-    --color-login-input-border: transparent;
-    --color-mode-switcher-bg: #262626;
-    --color-chat-preview-hover: rgba(64,64,64, 0.3);
-    --color-signup-submit-button: linear-gradient(45deg,#9C3B91, #DB3151, #F84233) border-box;
-    --color-signup-platforms-border:  linear-gradient(45deg, var(--color-other-user-container), var(--color-other-user-container)) padding-box,
-    linear-gradient(45deg, rgba(128, 28, 128, 0.5), rgba(223, 167, 65, 0.5)) border-box;;
-    --color-signup-platforms-border-reverse: linear-gradient(45deg, var(--color-other-user-container), var(--color-other-user-container)) padding-box,
-    linear-gradient(45deg, rgba(223, 167, 65, 0.5), rgba(128, 28, 128, 0.5)) border-box; 
-  }
+  --color-chat-secondary: #110F0F;
+  --color-body-bg-primary: #e4ddd7;
+  --color-body-bg-secondary: #1A1A1A;
+  --color-chat-container: #FFFFFF;
+  --color-border-primary: #f0ece8;
+  --color-other-user-container: #FFFFFF;
+  --color-input-bg: #f3f4f6;
+  --color-login-input-bg: transparent;
+  --color-login-input-border: black;
+  --color-mode-switcher-bg: #f3f4f6;
+  --color-chat-preview-hover: #f3f4f6;
+  --color-signup-submit-button: #08E7A0;
+  --color-signup-platforms-border:  linear-gradient(45deg, var(--color-other-user-container), var(--color-other-user-container)) padding-box,
+  linear-gradient(45deg, black, black) border-box;;
+  --color-signup-platforms-border-reverse: linear-gradient(45deg, var(--color-other-user-container), var(--color-other-user-container)) padding-box,
+  linear-gradient(45deg, black, black) border-box; 
+  
+}
+.theme-dark {
+  --color-text-primary: #FFFFFF;
+  --color-text-secondary: #737373;
+  --header-text: #a3a3a3; 
+  --color-chat-primary: #268D61;
+  --color-chat-secondary: #565A51;
+  --color-text-chat-secondary: #FFFFFF;
+  --color-body-bg-primary: #e4ddd7;
+  --color-body-bg-secondary: #ffffff;
+  --color-chat-container: #1F1F1F;
+  --color-other-user-container: #1C1C1C;
+  --color-border-primary: #4b5563;
+  --color-input-bg: #262626;
+  --color-login-input-bg: #262626;
+  --color-login-input-border: transparent;
+  --color-mode-switcher-bg: #262626;
+  --color-chat-preview-hover: rgba(64,64,64, 0.3);
+  --color-signup-submit-button: linear-gradient(45deg,#9C3B91, #DB3151, #F84233) border-box;
+  --color-signup-platforms-border:  linear-gradient(45deg, var(--color-other-user-container), var(--color-other-user-container)) padding-box,
+  linear-gradient(45deg, rgba(128, 28, 128, 0.5), rgba(223, 167, 65, 0.5)) border-box;;
+  --color-signup-platforms-border-reverse: linear-gradient(45deg, var(--color-other-user-container), var(--color-other-user-container)) padding-box,
+  linear-gradient(45deg, rgba(223, 167, 65, 0.5), rgba(128, 28, 128, 0.5)) border-box; 
+}
   
   body {
     margin: 0;
