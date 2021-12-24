@@ -13,7 +13,11 @@ let logout = () => {
     })
 }
 onAuthStateChanged(authentication, (user) => {
-    console.log('user changed:', user)
+    if(user){
+        console.log("user logged in: ", user)
+    }else{
+        console.log("user logged out")
+    }
 })
 
 let ConfirmationPopup = ({ onSelect }) => {

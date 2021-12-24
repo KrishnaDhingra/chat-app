@@ -1,23 +1,28 @@
 import React, { useState } from 'react'
 import { BsArrowRight } from "react-icons/bs";
+import { useHistory } from 'react-router-dom'
 import { authentication } from '../../firebase';
 import { signInWithEmailAndPassword, createUserWithEmailAndPassword } from 'firebase/auth';
 
 export default function SignupCredentials() {
+    let history = useHistory()
     const [ email, setEmail ] = useState('')
     const [ password, setPassword ] = useState('')
     const submit = (e) => {
         e.preventDefault()
-        if(email.match(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/) && password.length > 6){
+        if(email.match(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/) && password.length > 6) {
 
-            createUserWithEmailAndPassword(authentication, email, password)
+            return signInWithEmailAndPassword(authentication, email, password)
                 .then((credential) => {
                     console.log('user logged in:', credential.user)
+
+                    history.push('/')
                 })
                 .catch((error) => {
                     console.log(error.message)
                 })
         }
+        console.log('either email or password is not valid')
     }
     return (
         <form onSubmit={(e) => submit(e)} className="w-full sm:w-1/2 flex flex-col gap-3">
