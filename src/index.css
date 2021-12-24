@@ -181,3 +181,8 @@
 .signup-submit-button{
   background: var(--color-signup-submit-button)
 }
+.confirmation-popup{
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}

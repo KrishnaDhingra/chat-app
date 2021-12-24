@@ -1,27 +1,39 @@
 import React, { useState } from 'react'
 import { BsArrowRight } from "react-icons/bs";
+import { authentication } from '../../firebase';
+import { signInWithEmailAndPassword, createUserWithEmailAndPassword } from 'firebase/auth';
 
 export default function SignupCredentials() {
-    const [ id, setId ] = useState('')
-    const [ pin, setPin ] = useState('')
+    const [ email, setEmail ] = useState('')
+    const [ password, setPassword ] = useState('')
     const submit = (e) => {
-        console.log({id, pin})
+        e.preventDefault()
+        if(email.match(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/) && password.length > 6){
+
+            createUserWithEmailAndPassword(authentication, email, password)
+                .then((credential) => {
+                    console.log('user logged in:', credential.user)
+                })
+                .catch((error) => {
+                    console.log(error.message)
+                })
+        }
     }
     return (
-        <form onSubmit={() => submit()} className="w-full sm:w-1/2 flex flex-col gap-3">
+        <form onSubmit={(e) => submit(e)} className="w-full sm:w-1/2 flex flex-col gap-3">
             <input 
             placeholder="Teacher / Student Id" 
             type="text" 
             className="rounded text-primary border-[1.4px] px-4 py-4 border-loginInput placeholder:text-primary outline-none bg-logininputBg focus:border-focus"
-            onChange={(e) => setId(e.target.value)} 
-            value={id}/>
+            onChange={(e) => setEmail(e.target.value)} 
+            value={email}/>
 
             <input 
             placeholder="8 Digit Pin" 
             type="password" 
             className="rounded text-primary border-[1.4px] px-4 py-4 border-loginInput outline-none bg-logininputBg placeholder:text-primary focus:border-focus"
-            onChange={(e) => setPin(e.target.value)} 
-            value={pin}/>
+            onChange={(e) => setPassword(e.target.value)} 
+            value={password}/>
 
             <button 
             type='submit'
