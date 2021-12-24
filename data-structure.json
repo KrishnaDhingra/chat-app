@@ -1,0 +1,62 @@
+{
+    "users": {
+        "krishna": {
+            "id": "abc",
+            "username": "krishna",
+            "mail": "dkrishna1608@gmail.com",
+            "password": "hello12455",
+
+            "messages": {
+                "khushi": [    
+                    {
+                        "from": "khushi",
+                        "message": "mai thik hu yaar"
+                    },
+                    {
+                        "from": "me",
+                        "message": "mai thik hu yaar"
+                    }
+                ],
+                "sachin": [
+                    {
+                        "from": "khushi",
+                        "message": "mai thik hu yaar"
+                    },
+                    {
+                        "from": "me",
+                        "message": "mai thik hu yaar"
+                    }
+                ]
+            }
+        },
+        "khushi": {
+            "id": "xyz",
+            "username": "khushi",
+            "mail": "kdhingra3013@gmail.com",
+            "password": "hello4564",
+
+            "messages": {
+                "krishna": [    
+                    {
+                        "from": "me",
+                        "message": "mai thik hu yaar"
+                    },
+                    {
+                        "from": "krishna",
+                        "message": "mai thik hu yaar"
+                    }
+                ],
+                "sachin": [
+                    {
+                        "from": "me",
+                        "message": "mai thik hu yaar"
+                    },
+                    {
+                        "from": "sachin",
+                        "message": "mai thik hu yaar"
+                    }
+                ]
+            }
+        }
+    }
+}
