@@ -29,30 +29,9 @@ function App() {
             <OtherUsersContainer/>
             <MainChatsContainer onSelect={toggleTheme}/>
             <AnimatePresence>
-              {visibility && (
-                <motion.div
-                  initial={{
-                     opacity: 0, 
-                     transition: {
-                       duration: 0.2
-                     }
-                    }}
-                    animate={{ 
-                      opacity: 1 ,
-                      transition: {
-                        duration: 0.2
-                      }
-                    }}
-                    exit={{ 
-                      opacity: 0,
-                      transition: {
-                        duration: 0.2
-                      }
-                  }}
-                >
+              {visibility && 
                   <ConfirmationPopup onSelect={toggleVisibility}/>
-                </motion.div>
-              )}
+              }
             </AnimatePresence>
           </div>
         </Route>
