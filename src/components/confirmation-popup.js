@@ -53,7 +53,7 @@ let ConfirmationPopup = ({ onSelect }) => {
                 initial="hidden"
                 animate="visible"
                 exit="exit"
-                className="bg-blue-300 max-w-[400px] h-[220px] w-[screen - 10px] confirmation-popup absolute flex flex-col rounded-md p-8 items-left gap-3">
+                className="bg-blue-300 max-w-[400px] h-[220px] w-[screen - 10px] confirmation-popup absolute flex flex-col rounded-md px-8 items-left justify-center gap-3">
                 <p 
                     className="font-semibold text-2xl mb-3"
                     >Confirm Logout</p>
