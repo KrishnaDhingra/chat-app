@@ -140,8 +140,8 @@
   }
 }
 .online-dots{
-  width: 1px;
-  height: 1px;
+  width: 8px;
+  height: 8px;
 }
 .users-online::before{
   content: '';
