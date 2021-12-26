@@ -1,58 +1,18 @@
 {
     "users": {
-        "krishna": {
-            "id": "abc",
+        "uid": {
             "username": "krishna",
             "mail": "dkrishna1608@gmail.com",
             "password": "hello12455",
 
             "messages": {
-                "khushi": [    
+                "otherPerson uid": [    
                     {
-                        "from": "khushi",
+                        "from": "otherPerson uid [other person]",
                         "message": "mai thik hu yaar"
                     },
                     {
-                        "from": "me",
-                        "message": "mai thik hu yaar"
-                    }
-                ],
-                "sachin": [
-                    {
-                        "from": "khushi",
-                        "message": "mai thik hu yaar"
-                    },
-                    {
-                        "from": "me",
-                        "message": "mai thik hu yaar"
-                    }
-                ]
-            }
-        },
-        "khushi": {
-            "id": "xyz",
-            "username": "khushi",
-            "mail": "kdhingra3013@gmail.com",
-            "password": "hello4564",
-
-            "messages": {
-                "krishna": [    
-                    {
-                        "from": "me",
-                        "message": "mai thik hu yaar"
-                    },
-                    {
-                        "from": "krishna",
-                        "message": "mai thik hu yaar"
-                    }
-                ],
-                "sachin": [
-                    {
-                        "from": "me",
-                        "message": "mai thik hu yaar"
-                    },
-                    {
-                        "from": "sachin",
+                        "from": "my uid [me]",
                         "message": "mai thik hu yaar"
                     }
                 ]
