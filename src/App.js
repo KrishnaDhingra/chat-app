@@ -32,7 +32,7 @@ function App() {
   console.log("Hello from app")
   if(user){
     return (
-      <div 
+      <motion.div 
         className={`${theme} relative main-container lg:max-h-[92vh] max-w-[1340px] w-screen h-screen bg-secondary grow self-stretch rounded-md shadow-xl`}>
         <Navbar onSelect={toggleVisibility}/>
         <OtherUsersContainer/>
@@ -42,7 +42,7 @@ function App() {
               <ConfirmationPopup onSelect={toggleVisibility}/>
           }
         </AnimatePresence>
-      </div>
+      </motion.div>
     )
   }
   return (

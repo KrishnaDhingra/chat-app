@@ -76,37 +76,44 @@
   linear-gradient(45deg, rgba(223, 167, 65, 0.5), rgba(128, 28, 128, 0.5)) border-box; 
 }
   
-  body {
-    margin: 0;
-    font-family: 'Courier New', Courier, monospace;
-    background-color: #e4ddd7;
-    height: 100vh;
-    width: 100vw;
+body {
+  margin: 0;
+  font-family: 'Courier New', Courier, monospace;
+  background-color: #e4ddd7;
+  height: 100vh;
+  width: 100vw;
   display: flex;
   justify-content: center;
   align-items: center;
   font-family: 'Poppins', sans-serif;
+}
+svg:not(:root) {
+  overflow: visible;
 }
 .chats-container::-webkit-scrollbar {
   width: 3.5px;
 }
 
 /* Track */
-.chats-container::-webkit-scrollbar-track, .main-chats-container::-webkit-scrollbar-track {
+.chats-container::-webkit-scrollbar-track, .main-chats-container::-webkit-scrollbar-track, .users-online-inner::-webkit-scrollbar-track {
   background: #f1f1f1;
 }
 /* Handle */
-.chats-container::-webkit-scrollbar-thumb {
+.chats-container::-webkit-scrollbar-thumb, .users-online-inner::-webkit-scrollbar-thumb {
   background: rgb(185, 185, 185);
 }
 
 /* Handle on hover */
-.chats-container::-webkit-scrollbar-thumb:hover {
-  background: rgb(182, 182, 182);
+.chats-container::-webkit-scrollbar-thumb:hover,.users-online-inner::-webkit-scrollbar-thumb:hover {
+  background: rgb(163, 162, 162);
 }
 .main-chats-container::-webkit-scrollbar {
   width: 8.5px;
 }
+.users-online-inner::-webkit-scrollbar{
+  height: 4px;
+}
+
 /* Handle */
 .main-chats-container::-webkit-scrollbar-thumb {
   background: rgb(190, 190, 190);
