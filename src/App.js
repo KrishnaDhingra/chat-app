@@ -7,10 +7,14 @@ import MainChatsContainer from './components/chats/main-chats-container';
 import SignupContainer from './components/signup/signup-container.js'
 import ConfirmationPopup from './components/confirmation-popup'
 import { motion, AnimatePresence } from 'framer-motion'
+import { authentication } from './firebase.js'
+import { onAuthStateChanged } from 'firebase/auth'
+
 function App() {
 
   const [ theme, setTheme ] = useState('theme-dark')
   const [ visibility, setVisibility ] = useState(false)
+  const [ user, setUser ] = useState(null)
   const toggleTheme = () => {
     if(theme == 'theme-dark'){return setTheme('theme-light')}
     setTheme('theme-dark')
@@ -18,29 +22,32 @@ function App() {
   const toggleVisibility = () => {
     setVisibility(!visibility)
   }
-  
+
+  onAuthStateChanged(authentication, (user) => {
+    if(user){
+        return setUser(user)
+    }
+    setUser(null)
+  })
+  console.log("Hello from app")
+  if(user){
+    return (
+      <div 
+        className={`${theme} relative main-container lg:max-h-[92vh] max-w-[1340px] w-screen h-screen bg-secondary grow self-stretch rounded-md shadow-xl`}>
+        <Navbar onSelect={toggleVisibility}/>
+        <OtherUsersContainer/>
+        <MainChatsContainer onSelect={toggleTheme}/>
+        <AnimatePresence>
+          {visibility && 
+              <ConfirmationPopup onSelect={toggleVisibility}/>
+          }
+        </AnimatePresence>
+      </div>
+    )
+  }
   return (
-    <Router>
-      <Switch>
-        <Route path="/" exact>
-          <div 
-            className={`${theme} relative main-container lg:max-h-[92vh] max-w-[1340px] w-screen h-screen bg-secondary grow self-stretch rounded-md shadow-xl`}>
-            <Navbar onSelect={toggleVisibility}/>
-            <OtherUsersContainer/>
-            <MainChatsContainer onSelect={toggleTheme}/>
-            <AnimatePresence>
-              {visibility && 
-                  <ConfirmationPopup onSelect={toggleVisibility}/>
-              }
-            </AnimatePresence>
-          </div>
-        </Route>
-        <Route path="/signup" exact>
-          <SignupContainer theme={theme}/>
-        </Route>
-      </Switch>
-    </Router>
-  );
+    <SignupContainer theme={theme}/>
+  )
 }
 
 export default App;

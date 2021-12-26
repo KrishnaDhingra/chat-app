@@ -5,9 +5,10 @@ import { authentication } from '../../firebase';
 import { signInWithEmailAndPassword, createUserWithEmailAndPassword } from 'firebase/auth';
 
 export default function SignupCredentials() {
-    let history = useHistory()
+
     const [ email, setEmail ] = useState('')
     const [ password, setPassword ] = useState('')
+    
     const submit = (e) => {
         e.preventDefault()
         if(email.match(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/) && password.length > 6) {
@@ -15,8 +16,6 @@ export default function SignupCredentials() {
             return signInWithEmailAndPassword(authentication, email, password)
                 .then((credential) => {
                     console.log('user logged in:', credential.user)
-
-                    history.push('/')
                 })
                 .catch((error) => {
                     console.log(error.message)

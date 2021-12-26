@@ -6,20 +6,7 @@ import Backdrop from './backdrop.js'
 
 let logout = () => {
     signOut(authentication)
-    .then(() => {
-        console.log("the user signed out")
-    })
-    .catch((error) => {
-        console.log(error.message)
-    })
 }
-onAuthStateChanged(authentication, (user) => {
-    if(user){
-        console.log("user logged in: ", user)
-    }else{
-        console.log("user logged out")
-    }
-})
 
 let ConfirmationPopup = ({ onSelect }) => {
 
