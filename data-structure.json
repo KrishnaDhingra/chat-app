@@ -6,7 +6,7 @@
             "password": "hello12455",
 
             "messages": {
-                "otherPerson uid": [    
+                "otherPerson uid": [
                     {
                         "from": "otherPerson uid [other person]",
                         "message": "mai thik hu yaar"
