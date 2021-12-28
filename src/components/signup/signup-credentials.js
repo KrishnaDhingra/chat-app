@@ -14,7 +14,9 @@ export default function SignupCredentials() {
     const { handleSubmit, errors} = useForm(
         validateInfo,
         email,
-        password
+        username,
+        password,
+        password2
     );
 
     return (
@@ -33,6 +35,9 @@ export default function SignupCredentials() {
                     }}
                     value={email}
                 />
+
+                {errors.username && <p className="text-red-500 text-xs">{errors.username}</p>}
+
                 <input 
                     placeholder="Username" 
                     type="text" 
@@ -42,6 +47,7 @@ export default function SignupCredentials() {
                     }}
                     value={username}
                 />
+
                 {errors.password && <p className="text-red-500 text-xs">{errors.password}</p>}
                 <input 
                     placeholder="6 Digit Pin" 
@@ -52,7 +58,7 @@ export default function SignupCredentials() {
                     }}
                     value={password}
                 />
-                {errors.password && <p className="text-red-500 text-xs">{errors.password}</p>}
+                {errors.password2 && <p className="text-red-500 text-xs">{errors.password2}</p>}
                 <input 
                     placeholder="Confirm Pin" 
                     type="password" 

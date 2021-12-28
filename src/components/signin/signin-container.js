@@ -7,9 +7,9 @@ import AlertContainer from '../alert-container'
 
 export default function SigninContainer({theme}) {
 
-    const [ action, setAction ] = ('signin')
+    const [ action, setAction ] = useState('signin')
     const toggleAction = () => {
-        if(action == 'sigin'){
+        if(action == 'signin'){
             setAction('signup') 
             return
         }

@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { authentication } from '../../firebase';
-import { createUserWithEmailAndPassword, signInWithEmailAndPassword } from 'firebase/auth';
+import { signInWithEmailAndPassword } from 'firebase/auth';
 
 const useForm = (validate, email, password) => {
 

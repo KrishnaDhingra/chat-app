@@ -1,8 +1,8 @@
 import { useState, useEffect } from 'react';
 import { authentication } from '../../firebase';
-import { createUserWithEmailAndPassword, signInWithEmailAndPassword } from 'firebase/auth';
+import { createUserWithEmailAndPassword} from 'firebase/auth';
 
-const useForm = (validate, email, password) => {
+const useForm = (validate, email, username, password, password2) => {
 
   const [errors, setErrors] = useState({});
   const [ isSubmitting, setSubmitting ] = useState(false)
@@ -10,7 +10,9 @@ const useForm = (validate, email, password) => {
     e.preventDefault();
     let values = {
       email: email,
-      password: password
+      username: username,
+      password: password,
+      password2: password2
     }
     setSubmitting(true)
     setErrors(validate(values));
@@ -19,7 +21,7 @@ const useForm = (validate, email, password) => {
   useEffect(
     () => {
       if (Object.keys(errors).length === 0 && isSubmitting) {
-        signInWithEmailAndPassword(authentication, email, password)
+        createUserWithEmailAndPassword(authentication, email, password)
           .then(credential => {
             console.log(credential.user)
           })
