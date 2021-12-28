@@ -29,7 +29,6 @@ function App() {
     }
     setUser(null)
   })
-  console.log("Hello from app")
   if(user){
     return (
       <motion.div 

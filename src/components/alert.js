@@ -18,7 +18,7 @@ const Alert = ({text}) => {
             }}
             className={`${display} flex-col justify-center px-4 py-4 bg-[#646669] w-full rounded-md`}>
             <span className="font-medium text-neutral-700">Notice</span>
-            <span className="font-medium text-neutral-800">Lorem ipsum dolor, sit amet consectetur </span>
+            <span className="font-medium text-neutral-800">{text}</span>
         </motion.div>
     )
 }
