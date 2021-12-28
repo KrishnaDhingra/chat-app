@@ -8,7 +8,7 @@ import {
     GoogleAuthProvider,
 } from 'firebase/auth'
 
-export default function SignupPlatforms() {
+export default function SigninPlatforms() {
 
 
     const GoogleLogin = () => {

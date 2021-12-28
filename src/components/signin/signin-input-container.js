@@ -1,13 +1,13 @@
 import React from 'react'
-import SignupCredentials from './signup-credentials'
-import SignupPlatforms from './signup-platforms'
+import SigninCredentials from './signin-credentials'
+import SigninPlatforms from './signin-platforms'
 
-export default function SignupInputContainer() {
+export default function SigninInputContainer() {
     return (
         <div className="flex flex-col sm:flex-row items-center gap-14 px-6 max-w-[52rem] w-screen">
-            <SignupCredentials/>
+            <SigninCredentials/>
             <div className="hidden sm:inline font-bold text-primary">/</div>
-            <SignupPlatforms/>
+            <SigninPlatforms/>
         </div>
     )
 }

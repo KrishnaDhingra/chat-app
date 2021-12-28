@@ -5,12 +5,10 @@ import validateInfo from './validateInfo'
 import AlertContainer from '../alert-container';
 import Alert from '../alert'
 
-export default function SignupCredentials() {
+export default function SigninCredentials() {
 
     const [email, setEmail ] = useState('')
-    const [username, setUsername] = useState('')
     const [password, setPassword] = useState('')
-    const [password2, setPassword2] = useState('')
     const { handleSubmit, errors} = useForm(
         validateInfo,
         email,
@@ -18,7 +16,7 @@ export default function SignupCredentials() {
     );
 
     return (
-        <div className="px-4 m-auto max-w-[27rem] w-full">
+        <div className="w-full sm:w-1/2">
 
             <form onSubmit={handleSubmit} className="w-full flex flex-col gap-3">
 
@@ -33,15 +31,6 @@ export default function SignupCredentials() {
                     }}
                     value={email}
                 />
-                <input 
-                    placeholder="Username" 
-                    type="text" 
-                    className="rounded text-primary border-[1.4px] px-4 py-4 border-loginInput placeholder:text-primary outline-none bg-logininputBg focus:border-focus"
-                    onChange={(e) => {
-                        setUsername(e.target.value)
-                    }}
-                    value={username}
-                />
                 {errors.password && <p className="text-red-500 text-xs">{errors.password}</p>}
                 <input 
                     placeholder="6 Digit Pin" 
@@ -52,21 +41,11 @@ export default function SignupCredentials() {
                     }}
                     value={password}
                 />
-                {errors.password && <p className="text-red-500 text-xs">{errors.password}</p>}
-                <input 
-                    placeholder="Confirm Pin" 
-                    type="password" 
-                    className="rounded text-primary border-[1.4px] px-4 py-4 border-loginInput outline-none bg-logininputBg placeholder:text-primary focus:border-focus"
-                    onChange={(e) => {
-                        setPassword2(e.target.value)
-                    }}
-                    value={password2}
-                />
 
                 <button 
                 type='submit'
                 className="text-primary signup-submit-button flex justify-between items-center bg-[#00E99F] rounded px-4 py-4 border-[1.4px] border-transparent font-semibold text-left"
-                >Create a new account <BsArrowRight className="text-xl"/></button>
+                >Login to you Account <BsArrowRight className="text-xl"/></button>
             </form>   
         </div>
     )

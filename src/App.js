@@ -4,7 +4,7 @@ import './index.css'
 import Navbar from './components/navbar.js'
 import OtherUsersContainer from './components/other-users/other-users-container.js'
 import MainChatsContainer from './components/chats/main-chats-container';
-import SignupContainer from './components/signup/signup-container.js'
+import SigninContainer from './components/signin/signin-container.js'
 import ConfirmationPopup from './components/confirmation-popup'
 import { motion, AnimatePresence } from 'framer-motion'
 import { authentication } from './firebase.js'
@@ -45,7 +45,7 @@ function App() {
     )
   }
   return (
-    <SignupContainer theme={theme}/>
+    <SigninContainer theme={theme}/>
   )
 }
 
