@@ -19,6 +19,9 @@ export default function SignupCredentials() {
         <div className="w-full sm:w-1/2">
 
             <form onSubmit={handleSubmit} className="w-full flex flex-col gap-3">
+
+                {errors.email && <p className="text-red-500 text-xs">{errors.email}</p>}
+
                 <input 
                     placeholder="Teacher / Student Id" 
                     type="text" 
@@ -28,7 +31,7 @@ export default function SignupCredentials() {
                     }}
                     value={email}
                 />
-
+                {errors.password && <p className="text-red-500 text-xs">{errors.password}</p>}
                 <input 
                     placeholder="6 Digit Pin" 
                     type="password" 
