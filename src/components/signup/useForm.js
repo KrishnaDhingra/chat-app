@@ -1,9 +1,14 @@
 import { useState, useEffect } from 'react';
 import { authentication } from '../../firebase';
+import { db } from '../../firebase';
 import { createUserWithEmailAndPassword} from 'firebase/auth';
-import { BigHead } from "@bigheads/core";
-import { getRandomOptions  } from "../bigheads";
 import { updateProfile } from "firebase/auth";
+import {
+  collection,
+  onSnapshot,
+  doc, 
+  setDoc
+} from 'firebase/firestore'
 
 const useForm = (validate, email, username, password, password2) => {
 
@@ -22,9 +27,20 @@ const useForm = (validate, email, username, password, password2) => {
     setErrors(validate(values));
   };
 
-  const updateUserProfile = () => {
-    updateProfile(authentication.currentUser, {
+  const updateUserProfile = async () => {
+    await updateProfile(authentication.currentUser, {
       displayName: username,
+    })
+  }
+
+  const newUserCollection = async (user) => {
+    const docRef = doc(db, 'users', user.uid);
+    await updateUserProfile()
+    await setDoc(docRef, {
+      uid: user.uid,
+      displayName: user.displayName,
+      email: user.email,
+      photoURL: user.photoURL ? user.photoURL : null,
     })
   }
 
@@ -33,8 +49,7 @@ const useForm = (validate, email, username, password, password2) => {
       if (Object.keys(errors).length === 0 && isSubmitting) {
         createUserWithEmailAndPassword(authentication, email, password)
           .then(credential => {
-            updateUserProfile()
-            console.log(credential.user)
+            newUserCollection(credential.user)
           })
           .catch(error => {
             console.log(error.message)
