@@ -11,20 +11,22 @@
 
 
     "messages": {
-        "uid": [
-            {
-                "from": "uid",
-                "message": "message"
-            },{
-                "from": "uid",
-                "message": "message"
-            },{
-                "from": "uid",
-                "message": "message"
-            },{
-                "from": "uid",
-                "message": "message"
-            }
-        ]
+        "uid": {
+            "otherPersonuid": [
+                {
+                    "from": "uid",
+                    "message": "message"
+                },{
+                    "from": "uid",
+                    "message": "message"
+                },{
+                    "from": "uid",
+                    "message": "message"
+                },{
+                    "from": "uid",
+                    "message": "message"
+                }
+            ]
+        }
     }
 }
