@@ -33,6 +33,7 @@ export default function OtherUsersChats() {
             <div className="mt-5">
                 {users.map((element => {
                     return <ChatPreview 
+                                key={element.uid}
                                 displayName={element.displayName}
                                 uid={element.uid} 
                                 photoURL={element.photoURL}
