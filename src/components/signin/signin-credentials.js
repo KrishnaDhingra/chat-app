@@ -2,8 +2,6 @@ import React, { useState, useEffect } from 'react'
 import { BsArrowRight } from "react-icons/bs";
 import useForm from './useForm';
 import validateInfo from './validateInfo'
-import AlertContainer from '../alert-container';
-import Alert from '../alert'
 
 export default function SigninCredentials() {
 

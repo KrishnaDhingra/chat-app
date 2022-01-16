@@ -2,7 +2,6 @@ import React from 'react'
 import SignupHeader from './header'
 import SignupCrededntials from './signup-credentials'
 import { motion, AnimatePresence } from 'framer-motion'
-import AlertContainer from '../alert-container'
 
 export default function SignupContainer({theme, onSelect}) {
     return (

@@ -4,10 +4,9 @@ import { db } from '../../firebase';
 import { createUserWithEmailAndPassword} from 'firebase/auth';
 import { updateProfile } from "firebase/auth";
 import {
-  collection,
-  onSnapshot,
-  doc, 
-  setDoc
+  doc,
+  setDoc,
+  serverTimestamp
 } from 'firebase/firestore'
 
 const useForm = (validate, email, username, password, password2) => {
@@ -27,20 +26,24 @@ const useForm = (validate, email, username, password, password2) => {
     setErrors(validate(values));
   };
 
-  const updateUserProfile = async () => {
+  const setDisplayNameAsUsername = async () => {
     await updateProfile(authentication.currentUser, {
       displayName: username,
     })
   }
 
   const newUserCollection = async (user) => {
+    console.log(user)
     const docRef = doc(db, 'users', user.uid);
-    await updateUserProfile()
+    await setDisplayNameAsUsername()
     await setDoc(docRef, {
       uid: user.uid,
       displayName: user.displayName,
       email: user.email,
-      photoURL: user.photoURL ? user.photoURL : null,
+      photoURL: user.photoURL,
+      createdAt: serverTimestamp(),
+      messages: {},
+      friends: []
     })
   }
 

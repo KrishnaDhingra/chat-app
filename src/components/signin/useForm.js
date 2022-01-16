@@ -24,21 +24,12 @@ const useForm = (validate, email, password) => {
     setErrors(validate(values));
   };
 
-  const userCollection = async (user) => {
-    const docRef = doc(db, 'users', user.uid);
-    await setDoc(docRef, {
-      uid: user.uid,
-      displayName: user.displayName,
-      email: user.email,
-      photoURL: user.photoURL ? user.photoURL : null,
-    })
-  }
   useEffect(
     () => {
       if (Object.keys(errors).length === 0 && isSubmitting) {
         signInWithEmailAndPassword(authentication, email, password)
           .then(credential => {
-            userCollection(credential.user)
+            console.log("User signed in")
           })
           .catch(error => {
             console.log(error.message)
