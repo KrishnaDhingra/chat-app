@@ -174,8 +174,17 @@ svg:not(:root) {
   left: 0;
   border-top: 1.6px solid var(--color-border-primary);
 }
-.chat-preview:hover{
+.chat-preview:hover, .friends-bar:hover{
   background-color: var(--color-chat-preview-hover);
+}
+
+.friends-bar::before{
+  content: '';
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+  left: 0;
+  border-top: 0.5px solid rgba(153, 149, 149, 0.1);
 }
 .sign-up-platform-button{
   background: var(--color-signup-platforms-border);
