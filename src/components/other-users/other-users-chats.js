@@ -6,13 +6,11 @@ import {
   doc, 
   setDoc,
 } from 'firebase/firestore'
-import { setSelectionRange } from '@testing-library/user-event/dist/utils';
 
-export default function OtherUsersChats() {
+export default function OtherUsersChats({selectedUser}) {
 
     const colRef = collection(db, 'users')
     const [ users, setUsers ] = useState([])
-    const [ selectedUser, setselectedUser ] = useState()
     useEffect(() => {
         const unsub = onSnapshot(colRef, (snapshot) => {
     
@@ -31,26 +29,28 @@ export default function OtherUsersChats() {
             <input placeholder="Search for chats" type="text" className="bg-inputBg text-primary w-full py-2 px-3 outline-none border-none rounded-md focus:border-focus placeholder:text-sm"/>
 
             <div className="mt-5">
-                {users.map((element => {
-                    return <ChatPreview 
-                                key={element.uid}
-                                displayName={element.displayName}
-                                uid={element.uid} 
-                                photoURL={element.photoURL}
-                            />
+                {users.map((user => {
+                    return(
+                        <ChatPreview 
+                            user={user}
+                            selectedUser={selectedUser}
+                        />
+                    ) 
                 }))}
             </div>
         </div>
     )
 } 
 
-function ChatPreview({displayName, uid, photoURL}) {
+function ChatPreview({selectedUser, user}) {
     return (
         <div
-            className="relative chat-preview h-[65px] py-3 w-full bg-gray-chat-preview flex gap-3">
+            onClick={() => selectedUser(user)}
+            className="relative chat-preview h-[65px] py-3 w-full bg-gray-chat-preview flex gap-3"
+        >
             <img src="https://images.unsplash.com/photo-1527980965255-d3b416303d12?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=580&q=80" alt="other users dp" className="h-full aspect-square rounded-full" />
             <div className="h-full justify-center flex flex-col grow">
-                <span className="font-semibold text-sm text-primary">{displayName}</span>
+                <span className="font-semibold text-sm text-primary">{user.displayName}</span>
                 <span className="text-xs text-secondary text-normal">Hello how are you</span>
             </div>
             <span className="text-xs text-secondary text-normal">11:50</span>

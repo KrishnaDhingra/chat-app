@@ -5,7 +5,6 @@ import { authentication } from "../../firebase"
 export default function OtherUsersInfo() {
 
     const user = authentication.currentUser
-
     return (
         <section className="relative w-full z-0 h-full flex items-center justify-center flex-col bg-transparent">
             <FiSettings className="text-primary absolute top-7 right-7"/>

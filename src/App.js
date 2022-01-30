@@ -11,17 +11,22 @@ import { motion, AnimatePresence } from 'framer-motion'
 import { authentication } from './firebase.js'
 import { onAuthStateChanged } from 'firebase/auth'
 
-function App() {
+const App = () => {
 
   const [ theme, setTheme ] = useState('theme-dark')
   const [ visibility, setVisibility ] = useState(false)
   const [ user, setUser ] = useState(null)
+  const [ chat, setChat ] = useState(null)
+
   const toggleTheme = () => {
     if(theme == 'theme-dark'){return setTheme('theme-light')}
     setTheme('theme-dark')
   }
   const toggleVisibility = () => {
     setVisibility(!visibility)
+  }
+  const selectedUser = (user) => {
+    setChat(user.uid)
   }
 
   onAuthStateChanged(authentication, (user) => {
@@ -35,9 +40,10 @@ function App() {
       <motion.div 
         className={`${theme} relative main-container lg:max-h-[92vh] max-w-[1340px] w-screen h-screen bg-secondary grow self-stretch rounded-md shadow-xl`}>
         <Navbar onSelect={toggleVisibility}/>
-        <OtherUsersContainer/>
-        {/* <MainChatsContainer onSelect={toggleTheme}/> */}
-        <FriendsContainer onSelect={toggleTheme}/>
+        <OtherUsersContainer selectedUser={selectedUser}/>
+
+        {chat ? <MainChatsContainer onSelect={toggleTheme} chat={chat}/> : <FriendsContainer onSelect={toggleTheme}/>}
+        
         <AnimatePresence>
           {visibility && 
               <ConfirmationPopup onSelect={toggleVisibility}/>

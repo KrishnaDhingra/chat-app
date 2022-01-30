@@ -33,7 +33,6 @@ const useForm = (validate, email, username, password, password2) => {
   }
 
   const newUserCollection = async (user) => {
-    console.log(user)
     const docRef = doc(db, 'users', user.uid);
     await setDisplayNameAsUsername()
     await setDoc(docRef, {
@@ -42,8 +41,6 @@ const useForm = (validate, email, username, password, password2) => {
       email: user.email,
       photoURL: user.photoURL,
       createdAt: serverTimestamp(),
-      messages: {},
-      friends: []
     })
   }
 
