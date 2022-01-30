@@ -2,9 +2,6 @@ import React, { useState, useEffect } from 'react'
 import { db } from '../../firebase'
 import {
     doc,
-    getDoc,
-    updateDoc,
-    setDoc,
     addDoc,
     collection,
     serverTimestamp
@@ -17,7 +14,7 @@ const useMessage = (currentUserId, otherUserId, messageText) => {
 
         const roomId = currentUserId > otherUserId ? `${currentUserId + otherUserId}` : `${otherUserId + currentUserId}`
         const colRef = collection(db, "messages", roomId, "chat")
-        
+
         if(messageText !== ''){
             await addDoc(colRef, {
                 text: messageText,

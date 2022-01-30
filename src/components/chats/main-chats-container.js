@@ -25,7 +25,7 @@ export default function MainChatsContainer({onSelect, otherUser}) {
                 <SearchBar/>
                 <ModeSwitcher onSelect={onSelect}/>
             </section>
-            <InnerChatsContainer otherUser={otherUser}/>
+            <InnerChatsContainer otherUser={otherUser} currentUserId={currentUserId}/>
             <MessageInput onChange={updateMessage} message={message} onSubmit={handleSubmit}/>
         </main>
     )
