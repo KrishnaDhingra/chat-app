@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useRef } from 'react'
 import UserChat from './user-chat'
 import OtherUserChat from './other-user-chat'
 import ChatWith from './chatwith'
@@ -38,7 +38,7 @@ export default function InnerChatsContainer({currentUserId, otherUser}) {
                 {chats.length > 0 && chats.map(element => {
                     return (
                         <>
-                            {element.from == currentUserId ? <UserChat text={element.text}/> : <OtherUserChat text={element.text}/>}
+                            {element.from == currentUserId ? <UserChat text={element.text} chat={element}/> : <OtherUserChat text={element.text} chat={element}/>}
                         </>
                     )
                 })}
