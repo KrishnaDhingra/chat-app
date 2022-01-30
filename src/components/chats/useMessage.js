@@ -7,7 +7,7 @@ import {
     serverTimestamp
 } from 'firebase/firestore'
 
-const useMessage = (currentUserId, otherUserId, messageText) => {
+const useMessage = (currentUserId, otherUserId, messageText, updateMessage) => {
 
     const handleSubmit = async (e) => {
         e.preventDefault()
@@ -23,6 +23,7 @@ const useMessage = (currentUserId, otherUserId, messageText) => {
                 createdAt: serverTimestamp()
             })
         }
+        updateMessage('')
     }
     return { handleSubmit }
 }
