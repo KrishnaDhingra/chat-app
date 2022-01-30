@@ -21,8 +21,8 @@ function FriendsContainer({onSelect}){
 
             <div className="h-full w-full main-chats-container overflow-y-auto sm:pr-10 pr-4">
 
-                {[1, 2, 3, 4, 5, 6, 7, 435, 6, 7, 7 , 6].map(element => {
-                    return <FriendBar />
+                {[1, 2, 3, 4, 5, 6, 7, 8].map(element => {
+                    return <FriendBar key={element}/>
                 })}
             </div>
             

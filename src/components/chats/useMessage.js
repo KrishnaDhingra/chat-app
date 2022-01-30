@@ -5,43 +5,27 @@ import {
     getDoc,
     updateDoc,
     setDoc,
+    addDoc,
+    collection,
     serverTimestamp
 } from 'firebase/firestore'
 
 const useMessage = (currentUserId, otherUserId, messageText) => {
-    
-    const updateForCurrentUser = async () => {
-        const docRef = doc(db, 'users', currentUserId)
-        const docSnap = await getDoc(docRef)
-        const previousMessages = docSnap.data().messages
-        previousMessages.push({
-            from: currentUserId,
-            message: messageText
-        })
-        let finalMessages = previousMessages
-        updateDoc(docRef, {
-            messages: finalMessages
-        })
-    }
-    const updateForOtherUser = async () => {
-        const docRef = doc(db, 'users', otherUserId)
-        const docSnap = await getDoc(docRef)
-        const previousMessages = docSnap.data().messages
-        previousMessages.push({
-            from: currentUserId,
-            message: messageText
-        })
-        let finalMessages = previousMessages
-        updateDoc(docRef, {
-            messages: finalMessages
-        })
-    }
 
+    const handleSubmit = async (e) => {
+        e.preventDefault()
 
-    const handleSubmit = async () => {
-
-        updateForCurrentUser()
-        updateForOtherUser()
+        const roomId = currentUserId > otherUserId ? `${currentUserId + otherUserId}` : `${otherUserId + currentUserId}`
+        const colRef = collection(db, "messages", roomId, "chat")
+        
+        if(messageText !== ''){
+            await addDoc(colRef, {
+                text: messageText,
+                from: currentUserId,
+                to: otherUserId,
+                createdAt: serverTimestamp()
+            })
+        }
     }
     return { handleSubmit }
 }

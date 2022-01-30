@@ -26,7 +26,7 @@ const App = () => {
     setVisibility(!visibility)
   }
   const selectedUser = (user) => {
-    setChat(user.uid)
+    setChat(user)
   }
 
   onAuthStateChanged(authentication, (user) => {
@@ -42,7 +42,7 @@ const App = () => {
         <Navbar onSelect={toggleVisibility}/>
         <OtherUsersContainer selectedUser={selectedUser}/>
 
-        {chat ? <MainChatsContainer onSelect={toggleTheme} chat={chat}/> : <FriendsContainer onSelect={toggleTheme}/>}
+        {chat ? <MainChatsContainer onSelect={toggleTheme} otherUser={chat}/> : <FriendsContainer onSelect={toggleTheme}/>}
         
         <AnimatePresence>
           {visibility && 

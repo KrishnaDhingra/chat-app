@@ -1,18 +1,19 @@
 import React, { useState, useEffect } from 'react'
-import { db } from '../../firebase';
+import { db, authentication } from '../../firebase';
 import {
   collection,
   onSnapshot,
-  doc, 
-  setDoc,
+  query,
+  where
 } from 'firebase/firestore'
 
 export default function OtherUsersChats({selectedUser}) {
 
     const colRef = collection(db, 'users')
+    const q = query(colRef, where('uid', 'not-in', [authentication.currentUser.uid]))
     const [ users, setUsers ] = useState([])
     useEffect(() => {
-        const unsub = onSnapshot(colRef, (snapshot) => {
+        const unsub = onSnapshot(q, (snapshot) => {
     
             let users = []
             snapshot.docs.forEach(doc => {
@@ -31,7 +32,8 @@ export default function OtherUsersChats({selectedUser}) {
             <div className="mt-5">
                 {users.map((user => {
                     return(
-                        <ChatPreview 
+                        <ChatPreview
+                            key={user.uid}
                             user={user}
                             selectedUser={selectedUser}
                         />
