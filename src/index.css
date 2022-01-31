@@ -186,6 +186,14 @@ svg:not(:root) {
   left: 0;
   border-top: 0.5px solid rgba(153, 149, 149, 0.1);
 }
+.add-friend-button:disabled, .add-friend-button[disabled]{
+  background-color: rgba(0, 0, 0, 0.2);
+}
+.icon-outer{
+  padding: 0.7rem 0.7rem;
+  border-radius: 50%;
+  background-color: rgba(0, 0, 0, 0.2);
+}
 .sign-up-platform-button{
   background: var(--color-signup-platforms-border);
   border-color: transparent;

@@ -1,11 +1,10 @@
 import React from 'react'
 
-export default function SearchBar({onChange}) {
+export default function AddFriendSearchBar() {
     return (
         <input 
-        onChange={(e) => onChange(e.target.value)}
         type="text" 
-        placeholder="Search for a friend..." 
+        placeholder="Enter a username" 
         className="bg-inputBg px-3 py-2 rounded-md text-primary outline-none border border-transparent focus:border-focus placeholder:text-sm w-full"></input>
     )
 }
