@@ -12,7 +12,7 @@ function AddFriendBar({user}) {
                 <span className="font-semibold text-sm text-primary">{user.displayName}</span>
                 <span className="text-xs text-secondary text-normal">offline</span>
             </div>
-            <div className="flex flex-row gap-4 text-sm text-secondary mr-7">
+            <div className="flex flex-row gap-4 text-sm text-primary mr-7">
                 <div className="icon-outer">
                     <AiOutlineUserAdd 
                     onClick={() => sendNotification(user)}
