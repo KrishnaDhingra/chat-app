@@ -7,7 +7,7 @@ import {
   where
 } from 'firebase/firestore'
 
-export default function OtherUsersChats({selectedUser}) {
+export default function OtherUsersChats({selectedUser, changeScreen}) {
 
     const colRef = collection(db, 'users')
     const q = query(colRef, where('uid', 'not-in', [authentication.currentUser.uid]))
@@ -36,6 +36,7 @@ export default function OtherUsersChats({selectedUser}) {
                             key={user.uid}
                             user={user}
                             selectedUser={selectedUser}
+                            changeScreen={changeScreen}
                         />
                     ) 
                 }))}
@@ -44,10 +45,13 @@ export default function OtherUsersChats({selectedUser}) {
     )
 } 
 
-function ChatPreview({selectedUser, user}) {
+function ChatPreview({selectedUser, changeScreen, user}) {
     return (
         <div
-            onClick={() => selectedUser(user)}
+            onClick={() => {
+                selectedUser(user)
+                changeScreen('messages')
+            }}
             className="relative chat-preview h-[65px] py-3 w-full bg-gray-chat-preview flex gap-3"
         >
             <img src="https://images.unsplash.com/photo-1527980965255-d3b416303d12?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=580&q=80" alt="other users dp" className="h-full aspect-square rounded-full" />

@@ -1,7 +1,23 @@
 import React from 'react'
 import { AiOutlineUserAdd } from "react-icons/ai";
+import { db, authentication } from '../../firebase';
+import {
+    doc,
+    addDoc,
+    collection,
+    serverTimestamp
+} from 'firebase/firestore'
 
-function AddFriendBar() {
+function AddFriendBar({user}) {
+
+    const sendNotification = async () => {
+        const colRef = collection(db, 'notifications', user.uid, 'notifications')
+        await addDoc(colRef, {
+            notificationType: 'friendRequest',
+            from: authentication.currentUser.uid,
+            sentAt: serverTimestamp()
+        })
+    }
     return (
         <div
             className="relative friends-bar h-[68px] w-full bg-gray-chat-preview items-center flex gap-3">
@@ -12,7 +28,9 @@ function AddFriendBar() {
             </div>
             <div className="flex flex-row gap-4 text-sm text-secondary mr-7">
                 <div className="icon-outer">
-                    <AiOutlineUserAdd className="friends-bar-icons"/>
+                    <AiOutlineUserAdd 
+                    onClick={() => sendNotification()}
+                    className="friends-bar-icons"/>
                 </div>
             </div>
         </div>

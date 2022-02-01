@@ -174,11 +174,11 @@ svg:not(:root) {
   left: 0;
   border-top: 1.6px solid var(--color-border-primary);
 }
-.chat-preview:hover, .friends-bar:hover{
+.chat-preview:hover, .friends-bar:hover, .notification-bar:hover{
   background-color: var(--color-chat-preview-hover);
 }
 
-.friends-bar::before{
+.friends-bar::before, .notification-bar::before{
   content: '';
   position: absolute;
   width: 100%;
@@ -193,6 +193,9 @@ svg:not(:root) {
   padding: 0.7rem 0.7rem;
   border-radius: 50%;
   background-color: rgba(0, 0, 0, 0.2);
+}
+.friend-remove-icon-outer, .notification-remove-icon-outer{
+  background-color: rgb(235, 47, 47)
 }
 .sign-up-platform-button{
   background: var(--color-signup-platforms-border);

@@ -15,33 +15,65 @@ import {
 
 function FriendsContainer({onSelect}){
 
+    // determines that the total friends screen or the add friend screen should be shown. If this is true then the total friends screen will be shown and if false the add friend screen will be shown
     const [ friendsScreen, setFriendsScreen ] = useState(true)
-    const [ friends, setFriends ] = useState([])
+    // holds the list of all the friends that the user has
+    const [ totalFriends, setTotalFriends ] = useState([])
+    // holds the list of the filtered friends based on the search
     const [ filteredFriends, setFilteredFriends ] = useState([])
-    const colRef = collection(db, 'users')
-    const q = query(colRef, where('uid', 'not-in', [authentication.currentUser.uid]))
+    // holds the list of all the users that are on the platform
+    const [ totalAddFriends, setTotalAddFriends ] = useState([])
+    // holds the list of the filtered add friends based on the search
+    const [ filteredAddFriends, setFilteredAddFriends ] = useState([])
 
+    
+    const friendsRef = collection(db, 'friends', authentication.currentUser.uid, 'friends')
+    const q = query(friendsRef, where('uid', 'not-in', [authentication.currentUser.uid]))
+    
+    const addFriendsRef = collection(db, 'users')
+    const q2 = query(addFriendsRef, where('uid', 'not-in', [authentication.currentUser.uid]))
+
+
+    // this toggles friedsScreen state variable between true and false
     const toggleFriendsScreen = (value) => {
         setFriendsScreen(value)
     }
+    // this loads all the friends the the user has and assigs them to the 'friends' state variable
     useEffect(() => {
-        const unsub = onSnapshot(q, (snapshot) => {
+        const loadFriends = onSnapshot(q, (snapshot) => {
     
             let friends = []
             snapshot.docs.forEach(doc => {
                 friends.push({...doc.data(), id:doc.uid})
             })
-            setFriends(friends)
+            setTotalFriends(friends)
         })
-        return () => unsub()
+        const loadAddFriends = onSnapshot(q2, (snapshot) => {
+    
+            let addFriends = []
+            snapshot.docs.forEach(doc => {
+                addFriends.push({...doc.data(), id:doc.uid})
+            })
+            setTotalAddFriends(addFriends)
+        })
+        return () => {
+            loadFriends()
+            loadAddFriends()
+        }
     })
 
+    // this filter the friends state variables and then assigns the filtered value to the 'filteredFriends' state variable which inturn is used to render the 'friendBar' component
     const filterFriends = (userName) => {
 
-        let filteredFriends = friends.filter(friend => friend.displayName.toLowerCase().includes(userName.toLowerCase()))
+        let filteredFriends = totalFriends.filter(friend => friend.displayName.toLowerCase().includes(userName.toLowerCase()))
 
         filteredFriends ? setFilteredFriends(filteredFriends) : setFilteredFriends([])
+    }
+    const filterAddFriends = (userName) => {
 
+        let filteredAddFriends = totalAddFriends.filter(friend => friend.displayName.toLowerCase().includes(userName.toLowerCase()))
+
+        filteredAddFriends ? setFilteredAddFriends(filteredAddFriends) : setFilteredAddFriends([])
     }
     return (
         
@@ -61,7 +93,7 @@ function FriendsContainer({onSelect}){
                     <ModeSwitcher onSelect={onSelect}/>
                 </section>
 
-                {friendsScreen ? <SearchBar onChange={(filterFriends)}/> : <AddFriendSearchBar/>}
+                {friendsScreen ? <SearchBar onChange={(filterFriends)}/> : <AddFriendSearchBar onChange={(filterAddFriends)}/> }
 
             </section>
 
@@ -70,7 +102,13 @@ function FriendsContainer({onSelect}){
                 {friendsScreen ? filteredFriends.length > 0 && filteredFriends.map(friend => {
                     return <FriendBar key={friend.uid} friend={friend}/>
                 }) : 
-                    <AddFriendBar/>
+                <div>
+                    {
+                        filteredAddFriends.length > 0 && filteredAddFriends.map(user => {
+                            return <AddFriendBar key={user.uid} user={user}/>
+                        })
+                    }
+                </div>
                 }
             </div>
             
