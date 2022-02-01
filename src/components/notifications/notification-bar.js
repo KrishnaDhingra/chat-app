@@ -3,6 +3,7 @@ import { IoMdRemove } from "react-icons/io";
 import { BsCheck2 } from "react-icons/bs";
 import acceptFriendRequest from './acceptFriendRequest';
 import getUsername from './getUsername';
+import deleteNotification from './deleteNotification'
 
 function NotificationBar({notification}) {
 
