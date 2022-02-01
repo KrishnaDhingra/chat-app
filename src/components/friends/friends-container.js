@@ -28,7 +28,6 @@ function FriendsContainer({onSelect}){
 
     
     const friendsRef = collection(db, 'friends', authentication.currentUser.uid, 'friends')
-    const q = query(friendsRef, where('uid', 'not-in', [authentication.currentUser.uid]))
     
     const addFriendsRef = collection(db, 'users')
     const q2 = query(addFriendsRef, where('uid', 'not-in', [authentication.currentUser.uid]))
@@ -40,11 +39,11 @@ function FriendsContainer({onSelect}){
     }
     // this loads all the friends the the user has and assigs them to the 'friends' state variable
     useEffect(() => {
-        const loadFriends = onSnapshot(q, (snapshot) => {
+        const loadFriends = onSnapshot(friendsRef, (snapshot) => {
     
             let friends = []
             snapshot.docs.forEach(doc => {
-                friends.push({...doc.data(), id:doc.uid})
+                friends.push(doc.data())
             })
             setTotalFriends(friends)
         })
@@ -60,7 +59,7 @@ function FriendsContainer({onSelect}){
             loadFriends()
             loadAddFriends()
         }
-    })
+    }, [])
 
     // this filter the friends state variables and then assigns the filtered value to the 'filteredFriends' state variable which inturn is used to render the 'friendBar' component
     const filterFriends = (userName) => {
@@ -81,34 +80,33 @@ function FriendsContainer({onSelect}){
 
             <section className="flex flex-col gap-6 w-full pr-4 sm:pr-10">
                 <section className="flex w-full">
-                    <p onClick={() => toggleFriendsScreen(true)} className="text-primary text-3xl font-semibold">Friends</p>
 
+                    <p onClick={() => toggleFriendsScreen(true)} className="text-primary text-3xl font-semibold">Friends</p>
                     <button 
                         onClick={() => toggleFriendsScreen(false)} 
                         className="add-friend-button bg-navbarBg rounded-md text-primary font-semibold ml-auto mr-6 text-sm py-2 px-4"
                         disabled={!friendsScreen}
                     >Add Friend
                     </button>
-
                     <ModeSwitcher onSelect={onSelect}/>
+
                 </section>
-
-                {friendsScreen ? <SearchBar onChange={(filterFriends)}/> : <AddFriendSearchBar onChange={(filterAddFriends)}/> }
-
+                {friendsScreen ? <SearchBar onChange={filterFriends}/> : <AddFriendSearchBar onChange={filterAddFriends}/> }
             </section>
 
             <div className="h-full w-full main-chats-container overflow-y-auto sm:pr-10 pr-4">
 
-                {friendsScreen ? filteredFriends.length > 0 && filteredFriends.map(friend => {
-                    return <FriendBar key={friend.uid} friend={friend}/>
-                }) : 
-                <div>
-                    {
-                        filteredAddFriends.length > 0 && filteredAddFriends.map(user => {
-                            return <AddFriendBar key={user.uid} user={user}/>
-                        })
-                    }
-                </div>
+                {
+                    friendsScreen ? filteredFriends.length > 0 && filteredFriends.map(friend => {
+                        return <FriendBar key={friend.uid} friend={friend}/>
+                    }) : 
+                    <div>
+                        {
+                            filteredAddFriends.length > 0 && filteredAddFriends.map(user => {
+                                return <AddFriendBar key={user.uid} user={user}/>
+                            })
+                        }
+                    </div>
                 }
             </div>
             

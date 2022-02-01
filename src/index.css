@@ -194,9 +194,6 @@ svg:not(:root) {
   border-radius: 50%;
   background-color: rgba(0, 0, 0, 0.2);
 }
-.friend-remove-icon-outer, .notification-remove-icon-outer{
-  background-color: rgb(235, 47, 47)
-}
 .sign-up-platform-button{
   background: var(--color-signup-platforms-border);
   border-color: transparent;

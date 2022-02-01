@@ -1,16 +1,25 @@
 import React from 'react'
 import { IoMdRemove } from "react-icons/io";
+import { BsCheck2 } from "react-icons/bs";
+import acceptFriendRequest from './acceptFriendRequest';
+import getUsername from './getUsername';
 
-function NotificationBar({from, sentByUsername, sentAt}) {
+function NotificationBar({notification}) {
+
     return (
         <div className="relative notification-bar h-[68px] w-full bg-gray-chat-preview items-center flex">
             
             <section className="h-full justify-center gap-1 flex flex-col grow">
-                <span className="text-primary text-sm">You've received a friend request from {sentByUsername}</span>
+                <span className="text-primary text-sm">You've received a friend request from {notification.sentByUsername}</span>
                 <span className="text-xs text-secondary text-normal">1 January 10:01:10</span>
             </section>
 
-            <div className="icon-outer notification-remove-icon-outer ml-auto mr-7 text-smicon-outer">
+            {notification.notificationType == 'friendRequest' && 
+                <div onClick={() => acceptFriendRequest(notification)} className="p-2 rounded-full bg-green-600 ml-auto mr-3 text-sm">
+                    <BsCheck2 className="friends-bar-icons"/>
+                </div>
+            }
+            <div className="p-2 rounded-full bg-red-700 ml-auto mr-7 text-sm">
                 <IoMdRemove className="friends-bar-icons"/>
             </div>
         </div>

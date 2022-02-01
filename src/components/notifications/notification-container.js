@@ -39,7 +39,7 @@ export const NotificationContainer = ({onSelect}) => {
 
             <div className="h-full w-full main-chats-container overflow-y-auto sm:pr-10 pr-4">
                 {notifications.length > 0 && notifications.map((notification) => {
-                    return <NotificationBar from={notification.from} sentByUsername={notification.sentByUsername} sentAt={notification.sentAt}/>
+                    return <NotificationBar notification={notification}/>
                 })}
             </div>
         </main>
