@@ -16,7 +16,12 @@ function NotificationBar({notification}) {
             </section>
 
             {notification.notificationType == 'friendRequest' && 
-                <div onClick={() => acceptFriendRequest(notification)} className="p-2 rounded-full bg-green-600 ml-auto mr-3 text-sm">
+                <div 
+                    onClick={() => {
+                        acceptFriendRequest(notification)
+                        deleteNotification(notification)
+                    }}
+                    className="p-2 rounded-full bg-green-600 ml-auto mr-3 text-sm">
                     <BsCheck2 className="friends-bar-icons"/>
                 </div>
             }

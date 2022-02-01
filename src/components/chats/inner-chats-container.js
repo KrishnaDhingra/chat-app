@@ -38,7 +38,7 @@ export default function InnerChatsContainer({currentUserId, otherUser}) {
                 {chats.length > 0 && chats.map(element => {
                     return (
                         <>
-                            {element.from == currentUserId ? <UserChat key={element.createdAt.nanoseconds + Math.random()} text={element.text} chat={element}/> : <OtherUserChat text={element.text} chat={element}/>}
+                            {element.from == currentUserId ? <UserChat key={element.messageId} messageId={element.messageId} text={element.text} chat={element}/> : <OtherUserChat key={element.messageId} text={element.text} messageId={element.messageId} chat={element}/>}
                         </>
                     )
                 })}
