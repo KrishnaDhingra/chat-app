@@ -7,12 +7,6 @@ import {
 
 const deleteNotification = async (notification) => {
     const colRef = collection(db, 'notifications', authentication.currentUser.uid, 'notifications')
-    await onSnapshot(colRef, (snapshot) => {
-        snapshot.forEach(doc => {
-            if(doc.data().id == notification.id){
-                deleteDoc(doc)
-            }
-        })
-    })
+    console.log("this is coming from delete notification")
 }
 export default deleteNotification
