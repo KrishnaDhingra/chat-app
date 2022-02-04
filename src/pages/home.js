@@ -31,7 +31,7 @@ const Home = ({visibility, screen, changeScreen, toggleVisibility}) => {
   })
   if(user){
     return (
-      <div className={`theme-dark relative main-container lg:max-h-[92vh] max-w-[1340px] w-screen h-screen bg-secondary grow self-stretch rounded-md shadow-xl bg-blue-300`}>
+      <div className={`theme-dark relative main-container lg:max-h-[92vh] max-w-[1340px] w-screen h-screen bg-secondary rounded-md shadow-xl bg-blue-300`}>
 
         <Navbar changeScreen={changeScreen} onSelect={toggleVisibility}/>
 
