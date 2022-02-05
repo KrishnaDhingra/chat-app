@@ -15,7 +15,7 @@ const Home = ({visibility, screen, changeScreen, toggleVisibility, toggleTheme, 
     setChat(user)
   }
   return (
-    <div className="relative home-container w-full h-full bg-secondary rounded-md shadow-xl">
+    <div className="relative home-container w-full h-full bg-secondary rounded-md">
 
       <OtherUsersContainer selectedUser={selectedUser} changeScreen={changeScreen}/>
 

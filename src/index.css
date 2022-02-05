@@ -136,21 +136,6 @@ svg:not(:root) {
 .other-users-container{
   grid-template-rows: 190px 140px 1fr;
 }
-@media only screen and (max-width: 1024px) {
-  .main-container{
-    grid-template-columns: 70px 1fr;
-  }
-}
-@media only screen and (max-width: 640px) {
-  .main-container{
-    grid-template-columns: 1fr;
-  }
-}
-@media only screen and (max-width: 400px) {
-  .chats{
-    max-width: 270px;
-  }
-}
 .online-dots{
   width: 8px;
   height: 8px;
@@ -214,4 +199,19 @@ svg:not(:root) {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+}
+@media only screen and (max-width: 1024px) {
+  .main-container{
+    grid-template-columns: 70px 1fr;
+  }
+}
+@media only screen and (max-width: 640px) {
+  .main-container{
+    grid-template-columns: 1fr;
+  }
+}
+@media only screen and (max-width: 400px) {
+  .chats{
+    max-width: 270px;
+  }
 }
