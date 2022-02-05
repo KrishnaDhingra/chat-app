@@ -121,9 +121,14 @@ svg:not(:root) {
 .main-chats-container::-webkit-scrollbar-thumb:hover {
   background: rgb(158, 158, 158);
 }
+.home-container{
+  display: grid;
+  grid-template-columns: 360px 1fr;
+}
 .main-container{
   display: grid;
-  grid-template-columns: 70px 360px 1fr;
+  grid-template-columns: 70px 1fr;
+  background-color: blue;
 }
 .outer-chat-container{
   grid-template-rows: 40px 1fr 40px;
