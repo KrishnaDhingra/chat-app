@@ -7,7 +7,7 @@ import LogoutButton from './logoutButton'
 
 const SettingsContainer = () => {
     return (
-        <div className="relative w-full h-full flex flex-col gap-4 max-w-[600px] max-h-[80vh]">
+        <div className="relative w-full flex flex-col gap-4 max-w-[600px]">
             <GoBack/>
             <ChangeDp/>
             <UserInfo/>

@@ -107,7 +107,7 @@ svg:not(:root) {
 .chats-container::-webkit-scrollbar-thumb:hover,.users-online-inner::-webkit-scrollbar-thumb:hover {
   background: rgb(163, 162, 162);
 }
-.main-chats-container::-webkit-scrollbar {
+.main-chats-container::-webkit-scrollbar, .settings-page::-webkit-scrollbar{
   width: 8.5px;
 }
 .users-online-inner::-webkit-scrollbar{
@@ -115,10 +115,10 @@ svg:not(:root) {
 }
 
 /* Handle */
-.main-chats-container::-webkit-scrollbar-thumb {
+.main-chats-container::-webkit-scrollbar-thumb, .settings-page::-webkit-scrollbar-thumb{
   background: rgb(190, 190, 190);
 }
-.main-chats-container::-webkit-scrollbar-thumb:hover {
+.main-chats-container::-webkit-scrollbar-thumb:hover, .settings-page::-webkit-scrollbar-thumb:hover {
   background: rgb(158, 158, 158);
 }
 .home-container{
