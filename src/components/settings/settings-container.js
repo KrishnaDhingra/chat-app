@@ -2,6 +2,8 @@ import React from 'react'
 import GoBack from './goBack'
 import ChangeDp from './changeDp'
 import UserInfo from './userInfo'
+import CreatedAt from './createdAt'
+import LogoutButton from './logoutButton'
 
 const SettingsContainer = () => {
     return (
@@ -9,6 +11,8 @@ const SettingsContainer = () => {
             <GoBack/>
             <ChangeDp/>
             <UserInfo/>
+            <CreatedAt/>
+            <LogoutButton/>
         </div>
     )
 }
