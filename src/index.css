@@ -128,7 +128,6 @@ svg:not(:root) {
 .main-container{
   display: grid;
   grid-template-columns: 70px 1fr;
-  background-color: blue;
 }
 .outer-chat-container{
   grid-template-rows: 40px 1fr 40px;

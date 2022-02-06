@@ -7,7 +7,7 @@ import NotificationContainer from '../components/notifications/notification-cont
 import ConfirmationPopup from '../components/confirmation-popup'
 import { AnimatePresence } from 'framer-motion'
 
-const Home = ({visibility, screen, changeScreen, toggleVisibility, toggleTheme, theme}) => {
+const Home = ({visibility, screen, changeScreen, toggleVisibility, toggleTheme}) => {
 
   const [ chat, setChat ] = useState(null)
 

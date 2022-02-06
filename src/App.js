@@ -35,14 +35,14 @@ const App = () => {
   if(user){
     return(
       <Router>
-        <div className={`${theme} main-container lg:max-h-[92vh] max-w-[1340px] w-screen rounded-md shadow-xl`}>
+        <div className={`${theme} main-container lg:max-h-[92vh] max-w-[1340px] h-screen w-screen rounded-md shadow-xl`}>
   
           <Navbar changeScreen={changeScreen} onSelect={toggleVisibility}/>
           
           <Switch>
             
             <Route className="" path="/" exact>
-              <Home visibility={visibility} screen={screen} changeScreen={changeScreen} toggleVisibility={toggleVisibility} toggleTheme={toggleTheme} theme={theme}/>
+              <Home visibility={visibility} screen={screen} changeScreen={changeScreen} toggleVisibility={toggleVisibility} toggleTheme={toggleTheme}/>
             </Route>
   
             <Route path="/settings" exact>
