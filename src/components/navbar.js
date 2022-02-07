@@ -15,14 +15,16 @@ export default function Navbar({ changeScreen, onSelect, setConfirmationPopupTex
             <Link to="/">
                 <AiFillHome className="hover:text-white hover:opacity-100 text-gray-300 text-2xl font-bold opacity-70"/>
             </Link>
-
-            <FaUserFriends 
-                onClick={() => changeScreen('friends')}
-                className="mt-4 hover:text-white hover:opacity-100 text-gray-300 text-xl font-bold opacity-70"/>
-
-            <IoNotificationsSharp 
-                onClick={() => changeScreen('notifications')}
-                className="hover:text-white hover:opacity-100 text-gray-300 text-xl font-bold opacity-70"/>
+            <Link to="/">
+                <FaUserFriends 
+                    onClick={() => changeScreen('friends')}
+                    className="mt-4 hover:text-white hover:opacity-100 text-gray-300 text-xl font-bold opacity-70"/>
+            </Link>
+            <Link to="/">
+                <IoNotificationsSharp 
+                    onClick={() => changeScreen('notifications')}
+                    className="hover:text-white hover:opacity-100 text-gray-300 text-xl font-bold opacity-70"/>
+            </Link>
             
             <Link className="mt-auto" to="/settings">
                 <FiSettings className="hover:text-white hover:opacity-100 text-gray-300 text-xl font-bold opacity-70"/>
@@ -30,7 +32,7 @@ export default function Navbar({ changeScreen, onSelect, setConfirmationPopupTex
 
             <MdOutlineLogout 
                 onClick={() => {
-                    setConfirmationPopupText()
+                    setConfirmationPopupText('Confirm Logout', 'Are you sure you want to logout? This action cannot be reversed')
                     onSelect()
                 }}
                 className="hover:text-white hover:opacity-100 text-gray-300 text-xl font-bold opacity-70"/>

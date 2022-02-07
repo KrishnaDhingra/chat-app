@@ -27,9 +27,9 @@ const App = () => {
   const changeScreen = (screenType) => {
     setScreen(screenType)
   }
-  const setConfirmationPopupTextForSignOut = () => {
-    setHeading('Confirm Logout')
-    setText('Are you sure you want to logout? This action cannot be reversed')
+  const setConfirmationPopupTextForSignOut = (heading, text) => {
+    setHeading(heading)
+    setText(text)
   }
   onAuthStateChanged(authentication, (user) => {
     if(user){
