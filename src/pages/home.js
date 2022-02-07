@@ -2,12 +2,12 @@ import React, { useState } from 'react'
 import OtherUsersContainer from '../components/other-users/other-users-container.js'
 import MainChatsContainer from '../components/chats/main-chats-container';
 import FriendsContainer from '../components/friends/friends-container'
-import SigninContainer from '../components/signin/signin-container.js'
 import NotificationContainer from '../components/notifications/notification-container';
 import ConfirmationPopup from '../components/confirmation-popup'
 import { AnimatePresence } from 'framer-motion'
+import { logOut } from '../functions/logout'
 
-const Home = ({visibility, screen, changeScreen, toggleVisibility, toggleTheme}) => {
+const Home = ({visibility, screen, changeScreen, toggleVisibility, toggleTheme, heading, text}) => {
 
   const [ chat, setChat ] = useState(null)
 
@@ -27,7 +27,7 @@ const Home = ({visibility, screen, changeScreen, toggleVisibility, toggleTheme})
       
       <AnimatePresence>
         {visibility && 
-            <ConfirmationPopup onSelect={toggleVisibility}/>
+            <ConfirmationPopup onSelect={toggleVisibility} operation={logOut} heading={heading} text={text}/>
         }
       </AnimatePresence>
     </div>

@@ -7,7 +7,7 @@ import { FaUserFriends } from "react-icons/fa";
 import { IoNotificationsSharp } from "react-icons/io5";
 
 
-export default function Navbar({ selectedUser, changeScreen, onSelect }) {
+export default function Navbar({ changeScreen, onSelect, setConfirmationPopupText }) {
     return (
         <nav 
             className="left-[-70px] z-10 sm:left-[0px] h-full w-[70px] sm:w-full bg-[#268D61] absolute sm:relative flex flex-col items-center gap-6 py-5 sm:rounded-l-md">
@@ -29,7 +29,10 @@ export default function Navbar({ selectedUser, changeScreen, onSelect }) {
             </Link>
 
             <MdOutlineLogout 
-                onClick={() => onSelect()}
+                onClick={() => {
+                    setConfirmationPopupText()
+                    onSelect()
+                }}
                 className="hover:text-white hover:opacity-100 text-gray-300 text-xl font-bold opacity-70"/>
         
         </nav>

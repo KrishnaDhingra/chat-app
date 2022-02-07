@@ -6,7 +6,7 @@ import CreatedAt from './createdAt'
 import LogoutButton from './logoutButton'
 import DeleteUserButton from './deleteUserButton'
 
-const SettingsContainer = () => {
+const SettingsContainer = ({ toggleVisibility, setConfirmationText }) => {
     return (
         <div className="relative w-full flex flex-col gap-4 max-w-[600px]">
             <GoBack/>
@@ -15,7 +15,7 @@ const SettingsContainer = () => {
             <CreatedAt/>
             <div className="flex gap-4">
                 <LogoutButton/>
-                <DeleteUserButton/>
+                <DeleteUserButton toggleVisibility={toggleVisibility} setConfirmationText={setConfirmationText}/>
             </div>
         </div>
     )
