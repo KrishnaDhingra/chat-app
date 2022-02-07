@@ -36,11 +36,10 @@ const App = () => {
     return(
       <Router>
         <div className={`${theme} main-container lg:max-h-[92vh] max-w-[1340px] h-screen w-screen rounded-md shadow-xl`}>
-  
+
           <Navbar changeScreen={changeScreen} onSelect={toggleVisibility}/>
           
-          <Switch>
-            
+          <Switch>  
             <Route className="" path="/" exact>
               <Home visibility={visibility} screen={screen} changeScreen={changeScreen} toggleVisibility={toggleVisibility} toggleTheme={toggleTheme}/>
             </Route>
@@ -50,8 +49,6 @@ const App = () => {
             </Route>
           </Switch>
         </div>
-  
-  
       </Router>
     )
   }

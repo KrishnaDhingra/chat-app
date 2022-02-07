@@ -4,6 +4,7 @@ import ChangeDp from './changeDp'
 import UserInfo from './userInfo'
 import CreatedAt from './createdAt'
 import LogoutButton from './logoutButton'
+import DeleteUserButton from './deleteUserButton'
 
 const SettingsContainer = () => {
     return (
@@ -12,7 +13,10 @@ const SettingsContainer = () => {
             <ChangeDp/>
             <UserInfo/>
             <CreatedAt/>
-            <LogoutButton/>
+            <div className="flex gap-4">
+                <LogoutButton/>
+                <DeleteUserButton/>
+            </div>
         </div>
     )
 }
