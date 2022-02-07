@@ -194,7 +194,26 @@ svg:not(:root) {
 .signup-submit-button{
   background: var(--color-signup-submit-button)
 }
-.confirmation-popup{
+.changeDp-image-outer > .hover-camera{
+  display: none;
+}
+.changeDp-image-outer{
+  background-color: blue;
+}
+.changeDp-image-outer::before{
+  content: '';
+  z-index: 2;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.3);
+  border-radius: 50%;
+  display: none;
+}
+.changeDp-image-outer:hover::before, .changeDp-image-outer:hover .hover-camera{
+  display: flex;
+}
+.confirmation-popup, .hover-camera{
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
