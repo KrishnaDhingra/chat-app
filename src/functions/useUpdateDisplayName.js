@@ -3,14 +3,11 @@ import { authentication } from '../firebase'
 import { updateProfile } from 'firebase/auth'
 
 const useUpdateDisplayName = (value) => {
-    const [error, setError] = useState('')
+    const [error, setError] = useState()
     const [isSubmitting, setSubmitting] = useState(false)
     const handleSubmit = () => {
         setSubmitting(true)
         setError(validate(value))
-    }
-    const clearError = () => {
-        setError('')
     }
     useEffect(() => {
         if(error == '' && isSubmitting){
@@ -25,7 +22,7 @@ const useUpdateDisplayName = (value) => {
             console.log(error)
         }
     }, [error])
-    return { handleSubmit, clearError, error }
+    return { handleSubmit, error }
 }
 const validate = (value) => {
     let error = ''

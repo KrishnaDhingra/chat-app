@@ -11,7 +11,7 @@ const UserDisplayName = ({user}) => {
         setNewName(value)
     }
 
-    const { handleSubmit, clearError, error } = useUpdateDisplayName(newName)
+    const { handleSubmit, error } = useUpdateDisplayName(newName)
 
     return (
         <div className="flex justify-between">
@@ -39,7 +39,6 @@ const UserDisplayName = ({user}) => {
                     <div 
                         onClick={() => {
                             setEditMode(false)
-                            clearError()
                         }}
                         className="h-[30px] p-2 rounded-full bg-red-700 hover:bg-red-800 mr-5 text-sm">
                         <IoMdRemove className="friends-bar-icons"/>
@@ -51,7 +50,6 @@ const UserDisplayName = ({user}) => {
                 className="text-primary h-[32px] items-start px-5 rounded-md bg-neutral-700 hover:bg-[#2e2e2e] text-sm"
                 onClick={() => {
                     setEditMode(!editMode)
-                    clearError()
                 }}
             >Edit</button>
         </div>
