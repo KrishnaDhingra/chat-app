@@ -5,14 +5,18 @@ import UserInfo from './userInfo'
 import CreatedAt from './createdAt'
 import LogoutButton from './logoutButton'
 import DeleteUserButton from './deleteUserButton'
+import { authentication } from '../../firebase'
 
 const SettingsContainer = ({ toggleVisibility, setConfirmationText }) => {
+
+    const user = authentication.currentUser;
+
     return (
         <div className="relative w-full flex flex-col gap-4 max-w-[600px]">
             <GoBack/>
-            <ChangeDp/>
-            <UserInfo/>
-            <CreatedAt/>
+            <ChangeDp user={user}/>
+            <UserInfo user={user}/>
+            <CreatedAt user={user}/>
             <div className="flex gap-4">
                 <LogoutButton/>
                 <DeleteUserButton toggleVisibility={toggleVisibility} setConfirmationText={setConfirmationText}/>

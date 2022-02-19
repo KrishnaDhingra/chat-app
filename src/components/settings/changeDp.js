@@ -1,6 +1,6 @@
 import React from 'react'
 import { BsCameraFill } from 'react-icons/bs'
-const ChangeDp = () => {
+const ChangeDp = ({user}) => {
     return (
         <div className="flex gap-4">
             <div className="relative changeDp-image-outer h-[80px]">
@@ -8,7 +8,7 @@ const ChangeDp = () => {
                 <BsCameraFill className="hover-camera absolute text-white text-xl"/>
             </div>
 
-            <div className="mt-4 text-primary font-medium text-[16px]">Krishna Dhingra</div>
+            <div className="mt-4 text-primary font-medium text-[16px]">{user.displayName}</div>
         </div>
     )
 }

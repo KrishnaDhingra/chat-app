@@ -21,11 +21,11 @@ function NotificationBar({notification}) {
                         acceptFriendRequest(notification)
                         deleteNotification(notification)
                     }}
-                    className="p-2 rounded-full bg-green-600 ml-auto mr-3 text-sm">
+                    className="p-2 rounded-full bg-green-600 hover:bg-green-700 ml-auto mr-3 text-sm">
                     <BsCheck2 className="friends-bar-icons"/>
                 </div>
             }
-            <div className="p-2 rounded-full bg-red-700 ml-auto mr-7 text-sm">
+            <div className="p-2 rounded-full bg-red-700 hover:bg-red-800  mr-7 text-sm">
                 <IoMdRemove className="friends-bar-icons"/>
             </div>
         </div>
