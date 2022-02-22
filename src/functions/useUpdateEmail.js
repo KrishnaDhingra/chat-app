@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react'
 import { authentication } from '../firebase'
-import { updateProfile } from 'firebase/auth'
+import { updateEmail } from 'firebase/auth'
 
-const useUpdateDisplayName = (value) => {
+const useUpdateEmail = (value) => {
     const [error, setError] = useState()
     const [isSubmitting, setSubmitting] = useState(false)
     const handleSubmit = () => {
@@ -11,10 +11,8 @@ const useUpdateDisplayName = (value) => {
     }
     useEffect(() => {
         if(error == '' && isSubmitting){
-            updateProfile(authentication.currentUser, {
-                displayName: value
-              }).then(() => {
-                  console.log("display name updated")
+            updateEmail(authentication.currentUser, value).then(() => {
+                  console.log("email updated")
               }).catch((error) => {
                   console.log(error)
               });
@@ -26,15 +24,13 @@ const useUpdateDisplayName = (value) => {
 }
 const validate = (value) => {
     let error = ''
-    if(value.trim().length == 0){
-        error = 'Name is required'
-    }else{
-        if(value.trim().length < 3){
-            error = 'Atleast 3 characters are required'
-        }else{
-            error = ''
-        }
+    if (value.trim().length == 0) {
+        error = 'Email required';
+    } else if (!/\S+@\S+\.\S+/.test(value)) {
+        error = 'Email address is invalid';
+    } else{
+        error = ''
     }
     return error
 }
-export default useUpdateDisplayName
+export default useUpdateEmail

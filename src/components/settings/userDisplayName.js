@@ -20,7 +20,7 @@ const UserDisplayName = ({user}) => {
                 <div className="flex gap-3">
                     <span className="text-secondary text-xs">Display Name</span>
 
-                    {error && <span className="text-secondary text-xs text-red-500">{error}</span>}
+                    {(error && editMode ) && <span className="text-secondary text-xs text-red-500">{error}</span>}
                 </div>
 
                 {editMode ? <ChangeDisplayNameInput value={newName} changeInput={changeInput}/> : <span className="text-primary text-sm">{user.displayName}</span>}
@@ -32,6 +32,7 @@ const UserDisplayName = ({user}) => {
                     <div 
                         onClick={() => {
                             handleSubmit()
+                            // setEditMode(false)
                         }}
                         className="h-[30px] p-2 rounded-full bg-green-600 hover:bg-green-700 ml-auto mr-2 text-sm">
                         <BsCheck2 className="friends-bar-icons"/>
