@@ -15,7 +15,7 @@ const SettingsContainer = ({ toggleVisibility, setConfirmationText }) => {
         <div className="relative w-full flex flex-col gap-4 max-w-[600px]">
             <GoBack/>
             <ChangeDp user={user}/>
-            <UserInfo user={user}/>
+            <UserInfo user={user} toggleVisibility={toggleVisibility} setConfirmationText={setConfirmationText}/>
             <CreatedAt user={user}/>
             <div className="flex gap-4">
                 <LogoutButton/>

@@ -3,7 +3,7 @@ import useUpdateEmail from '../../functions/useUpdateEmail';
 import { IoMdRemove } from "react-icons/io";
 import { BsCheck2 } from "react-icons/bs";
 
-const UserEmail = ({user}) => {
+const UserEmail = ({user, toggleVisibility, setConfirmationText}) => {
 
     const [ editMode, setEditMode ] = useState(false)
     const [ newEmail, setNewEmail ] = useState('')
