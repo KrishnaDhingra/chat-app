@@ -1,16 +1,23 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { RiMessageFill } from 'react-icons/ri'
 import { IoMdRemove } from 'react-icons/io'
 import ConfirmationPopup from '../confirmation-popup'
 import { AnimatePresence } from 'framer-motion'
 import { db, authentication } from '../../firebase'
 import { doc, deleteDoc } from 'firebase/firestore'
+import getUsername from '../notifications/getUsername'
 
 function FriendBar({ friend }) {
   const [visibility, setVisibility] = useState(false)
+  const [displayName, setDisplayName] = useState('')
   let toggleVisibility = () => {
     setVisibility(false)
   }
+
+  useEffect(async () => {
+    let name = await getUsername(friend.friendId)
+    setDisplayName(name.displayName)
+  }, [])
 
   let removeFriend = async () => {
     const docRef = doc(
@@ -20,9 +27,19 @@ function FriendBar({ friend }) {
       'friends',
       friend.friendId,
     )
+    const friendDocRef = doc(
+      db,
+      'friends',
+      friend.friendId,
+      'friends',
+      authentication.currentUser.uid,
+    )
+
     await deleteDoc(docRef)
+    await deleteDoc(friendDocRef)
     console.log('Deleted Friend')
   }
+
   return (
     <div className="friends-bar h-[68px] w-full bg-gray-chat-preview items-center flex gap-3">
       <img
@@ -32,7 +49,7 @@ function FriendBar({ friend }) {
       />
       <div className="h-full justify-center flex flex-col grow">
         <span className="font-semibold text-sm text-primary">
-          Krishna Dhingra
+          {displayName}
         </span>
         <span className="text-xs text-secondary text-normal">offline</span>
       </div>

@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { AiOutlineUserAdd } from 'react-icons/ai'
 import sendNotification from './sendNotification'
 import { db, authentication } from '../../firebase'
@@ -6,22 +6,25 @@ import { doc, getDoc } from 'firebase/firestore'
 
 function AddFriendBar({ user }) {
   const [exists, setExists] = useState(false)
-  let checkFriend = async () => {
-    const docRef = doc(
-      db,
-      'friends',
-      authentication.currentUser.uid,
-      'friends',
-      user.uid,
-    )
-    const docSnap = await getDoc(docRef)
-    if (docSnap.exists()) {
-      setExists(true)
-      return
+  useEffect(() => {
+    let checkFriend = async () => {
+      const docRef = doc(
+        db,
+        'friends',
+        authentication.currentUser.uid,
+        'friends',
+        user.uid,
+      )
+      const docSnap = await getDoc(docRef)
+      if (docSnap.exists()) {
+        setExists(true)
+        return
+      }
+      setExists(false)
     }
-    setExists(false)
-  }
-  checkFriend()
+    return () => checkFriend()
+  }, [])
+
   return (
     <div className="relative friends-bar h-[68px] w-full bg-gray-chat-preview items-center flex gap-3">
       <img
@@ -42,7 +45,6 @@ function AddFriendBar({ user }) {
           <div className="icon-outer">
             <AiOutlineUserAdd
               onClick={() => {
-                checkFriend()
                 sendNotification(user)
               }}
               className="friends-bar-icons"
