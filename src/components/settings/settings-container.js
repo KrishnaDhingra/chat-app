@@ -8,20 +8,23 @@ import DeleteUserButton from './deleteUserButton'
 import { authentication } from '../../firebase'
 
 const SettingsContainer = ({ toggleVisibility, setConfirmationText }) => {
+  const user = authentication.currentUser
 
-    const user = authentication.currentUser;
-
-    return (
-        <div className="relative w-full flex flex-col gap-4 max-w-[600px]">
-            <GoBack/>
-            <ChangeDp user={user}/>
-            <UserInfo user={user} toggleVisibility={toggleVisibility} setConfirmationText={setConfirmationText}/>
-            <CreatedAt user={user}/>
-            <div className="flex gap-4">
-                <LogoutButton/>
-                <DeleteUserButton toggleVisibility={toggleVisibility} setConfirmationText={setConfirmationText}/>
-            </div>
-        </div>
-    )
+  return (
+    <div className="w-full flex flex-col gap-4 max-w-[600px]">
+      <GoBack />
+      <ChangeDp user={user} />
+      <UserInfo
+        user={user}
+        toggleVisibility={toggleVisibility}
+        setConfirmationText={setConfirmationText}
+      />
+      <CreatedAt user={user} />
+      <div className="flex gap-4">
+        <LogoutButton />
+        <DeleteUserButton />
+      </div>
+    </div>
+  )
 }
 export default SettingsContainer

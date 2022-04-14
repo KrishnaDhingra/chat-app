@@ -4,26 +4,26 @@
 @tailwind components;
 @tailwind utilities;
 
-@layer base{
+@layer base {
   :root {
-    --color-navbar-bg: #268D61;
+    --color-navbar-bg: #268d61;
     --color-text-primary: #1f2937;
     --color-text-secondary: #9ca3af;
-    --header-text: #1f2937; 
-    --color-text-chat-secondary: #CDC3BA;
-    --color-chat-primary: #CDC3BA;
-    --color-chat-secondary: #110F0F;
+    --header-text: #1f2937;
+    --color-text-chat-secondary: #cdc3ba;
+    --color-chat-primary: #cdc3ba;
+    --color-chat-secondary: #110f0f;
     --color-body-bg-primary: #e4ddd7;
     --color-body-bg-secondary: #ffffff;
-    --color-chat-container: #FFFFFF;
+    --color-chat-container: #ffffff;
     --color-border-primary: #f0ece8;
-    --color-other-user-container: #FFFFFF;
+    --color-other-user-container: #ffffff;
     --color-input-bg: #f3f4f6;
     --color-login-input-bg: transparent;
     --color-login-input-border: black;
     --color-mode-switcher-bg: #f3f4f6;
     --color-chat-preview-hover: #f3f4f6;
-    --color-signup-submit-button: #08E7A0;
+    --color-signup-submit-button: #08e7a0;
     --color-signup-platforms-border: black;
     --color-signup-platforms-border-reverse: black;
   }
@@ -31,51 +31,78 @@
 .theme-light {
   --color-text-primary: #1f2937;
   --color-text-secondary: #9ca3af;
-  --header-text: #1f2937; 
-  --color-chat-primary: #CDC3BA;
-  --color-text-chat-secondary: #CDC3BA;
-  --color-chat-secondary: #110F0F;
+  --header-text: #1f2937;
+  --color-chat-primary: #cdc3ba;
+  --color-text-chat-secondary: #cdc3ba;
+  --color-chat-secondary: #110f0f;
   --color-body-bg-primary: #e4ddd7;
-  --color-body-bg-secondary: #1A1A1A;
-  --color-chat-container: #FFFFFF;
+  --color-body-bg-secondary: #1a1a1a;
+  --color-chat-container: #ffffff;
   --color-border-primary: #f0ece8;
-  --color-other-user-container: #FFFFFF;
+  --color-other-user-container: #ffffff;
   --color-input-bg: #f3f4f6;
   --color-login-input-bg: transparent;
   --color-login-input-border: black;
   --color-mode-switcher-bg: #f3f4f6;
   --color-chat-preview-hover: #f3f4f6;
-  --color-signup-submit-button: #08E7A0;
-  --color-signup-platforms-border:  linear-gradient(45deg, var(--color-other-user-container), var(--color-other-user-container)) padding-box,
-  linear-gradient(45deg, black, black) border-box;;
-  --color-signup-platforms-border-reverse: linear-gradient(45deg, var(--color-other-user-container), var(--color-other-user-container)) padding-box,
-  linear-gradient(45deg, black, black) border-box; 
-  
+  --color-signup-submit-button: #08e7a0;
+  --color-signup-platforms-border: linear-gradient(
+        45deg,
+        var(--color-other-user-container),
+        var(--color-other-user-container)
+      )
+      padding-box,
+    linear-gradient(45deg, black, black) border-box;
+  --color-signup-platforms-border-reverse: linear-gradient(
+        45deg,
+        var(--color-other-user-container),
+        var(--color-other-user-container)
+      )
+      padding-box,
+    linear-gradient(45deg, black, black) border-box;
 }
 .theme-dark {
-  --color-text-primary: #FFFFFF;
+  --color-text-primary: #ffffff;
   --color-text-secondary: #737373;
-  --header-text: #a3a3a3; 
-  --color-chat-primary: #268D61;
-  --color-chat-secondary: #565A51;
-  --color-text-chat-secondary: #FFFFFF;
+  --header-text: #a3a3a3;
+  --color-chat-primary: #268d61;
+  --color-chat-secondary: #565a51;
+  --color-text-chat-secondary: #ffffff;
   --color-body-bg-primary: #e4ddd7;
   --color-body-bg-secondary: #ffffff;
-  --color-chat-container: #1F1F1F;
-  --color-other-user-container: #1C1C1C;
+  --color-chat-container: #1f1f1f;
+  --color-other-user-container: #1c1c1c;
   --color-border-primary: #4b5563;
   --color-input-bg: #262626;
   --color-login-input-bg: #262626;
   --color-login-input-border: transparent;
   --color-mode-switcher-bg: #262626;
-  --color-chat-preview-hover: rgba(64,64,64, 0.3);
-  --color-signup-submit-button: linear-gradient(45deg,#9C3B91, #DB3151, #F84233) border-box;
-  --color-signup-platforms-border:  linear-gradient(45deg, var(--color-other-user-container), var(--color-other-user-container)) padding-box,
-  linear-gradient(45deg, rgba(128, 28, 128, 0.5), rgba(223, 167, 65, 0.5)) border-box;;
-  --color-signup-platforms-border-reverse: linear-gradient(45deg, var(--color-other-user-container), var(--color-other-user-container)) padding-box,
-  linear-gradient(45deg, rgba(223, 167, 65, 0.5), rgba(128, 28, 128, 0.5)) border-box; 
+  --color-chat-preview-hover: rgba(64, 64, 64, 0.3);
+  --color-signup-submit-button: linear-gradient(
+      45deg,
+      #9c3b91,
+      #db3151,
+      #f84233
+    )
+    border-box;
+  --color-signup-platforms-border: linear-gradient(
+        45deg,
+        var(--color-other-user-container),
+        var(--color-other-user-container)
+      )
+      padding-box,
+    linear-gradient(45deg, rgba(128, 28, 128, 0.5), rgba(223, 167, 65, 0.5))
+      border-box;
+  --color-signup-platforms-border-reverse: linear-gradient(
+        45deg,
+        var(--color-other-user-container),
+        var(--color-other-user-container)
+      )
+      padding-box,
+    linear-gradient(45deg, rgba(223, 167, 65, 0.5), rgba(128, 28, 128, 0.5))
+      border-box;
 }
-  
+
 body {
   margin: 0;
   font-family: 'Courier New', Courier, monospace;
@@ -95,67 +122,74 @@ svg:not(:root) {
 }
 
 /* Track */
-.chats-container::-webkit-scrollbar-track, .main-chats-container::-webkit-scrollbar-track, .users-online-inner::-webkit-scrollbar-track {
+.chats-container::-webkit-scrollbar-track,
+.main-chats-container::-webkit-scrollbar-track,
+.users-online-inner::-webkit-scrollbar-track {
   background: #f1f1f1;
 }
 /* Handle */
-.chats-container::-webkit-scrollbar-thumb, .users-online-inner::-webkit-scrollbar-thumb {
+.chats-container::-webkit-scrollbar-thumb,
+.users-online-inner::-webkit-scrollbar-thumb {
   background: rgb(185, 185, 185);
 }
 
 /* Handle on hover */
-.chats-container::-webkit-scrollbar-thumb:hover,.users-online-inner::-webkit-scrollbar-thumb:hover {
+.chats-container::-webkit-scrollbar-thumb:hover,
+.users-online-inner::-webkit-scrollbar-thumb:hover {
   background: rgb(163, 162, 162);
 }
-.main-chats-container::-webkit-scrollbar, .settings-page::-webkit-scrollbar{
+.main-chats-container::-webkit-scrollbar,
+.settings-page::-webkit-scrollbar {
   width: 8.5px;
 }
-.users-online-inner::-webkit-scrollbar{
+.users-online-inner::-webkit-scrollbar {
   height: 4px;
 }
 
 /* Handle */
-.main-chats-container::-webkit-scrollbar-thumb, .settings-page::-webkit-scrollbar-thumb{
+.main-chats-container::-webkit-scrollbar-thumb,
+.settings-page::-webkit-scrollbar-thumb {
   background: rgb(190, 190, 190);
 }
-.main-chats-container::-webkit-scrollbar-thumb:hover, .settings-page::-webkit-scrollbar-thumb:hover {
+.main-chats-container::-webkit-scrollbar-thumb:hover,
+.settings-page::-webkit-scrollbar-thumb:hover {
   background: rgb(158, 158, 158);
 }
-.home-container{
+.home-container {
   display: grid;
   grid-template-columns: 360px 1fr;
 }
-.main-container{
+.main-container {
   display: grid;
   grid-template-columns: 70px 1fr;
 }
-.outer-chat-container{
+.outer-chat-container {
   grid-template-rows: 40px 1fr 40px;
 }
-.other-users-container{
+.other-users-container {
   grid-template-rows: 190px 140px 1fr;
 }
-.online-dots{
+.online-dots {
   width: 8px;
   height: 8px;
 }
-.users-online::before{
+.users-online::before {
   content: '';
   position: absolute;
   width: 90%;
   top: 0;
   height: 1px;
-  background-color:var(--color-border-primary);
+  background-color: var(--color-border-primary);
 }
-.users-online::after{
+.users-online::after {
   content: '';
   position: absolute;
   width: 90%;
   bottom: 0;
   height: 1px;
-  background-color:var(--color-border-primary)
+  background-color: var(--color-border-primary);
 }
-.chat-preview::before{
+.chat-preview::before {
   content: '';
   position: absolute;
   width: 100%;
@@ -163,11 +197,14 @@ svg:not(:root) {
   left: 0;
   border-top: 1.6px solid var(--color-border-primary);
 }
-.chat-preview:hover, .friends-bar:hover, .notification-bar:hover{
+.chat-preview:hover,
+.friends-bar:hover,
+.notification-bar:hover {
   background-color: var(--color-chat-preview-hover);
 }
 
-.friends-bar::before, .notification-bar::before{
+.friends-bar::before,
+.notification-bar::before {
   content: '';
   position: absolute;
   width: 100%;
@@ -175,32 +212,30 @@ svg:not(:root) {
   left: 0;
   border-top: 0.5px solid rgba(153, 149, 149, 0.1);
 }
-.add-friend-button:disabled, .add-friend-button[disabled]{
+.add-friend-button:disabled,
+.add-friend-button[disabled] {
   background-color: rgba(0, 0, 0, 0.2);
 }
-.icon-outer{
+.icon-outer {
   padding: 0.7rem 0.7rem;
   border-radius: 50%;
   background-color: rgba(0, 0, 0, 0.2);
 }
-.sign-up-platform-button{
+.sign-up-platform-button {
   background: var(--color-signup-platforms-border);
   border-color: transparent;
   border-radius: 0.3rem;
 }
-.sign-up-facebook{
+.sign-up-facebook {
   background: var(--color-signup-platforms-border-reverse);
 }
-.signup-submit-button{
-  background: var(--color-signup-submit-button)
+.signup-submit-button {
+  background: var(--color-signup-submit-button);
 }
-.changeDp-image-outer > .hover-camera{
+.changeDp-image-outer > .hover-camera {
   display: none;
 }
-.changeDp-image-outer{
-  background-color: blue;
-}
-.changeDp-image-outer::before{
+.changeDp-image-outer::before {
   content: '';
   z-index: 2;
   position: absolute;
@@ -210,26 +245,28 @@ svg:not(:root) {
   border-radius: 50%;
   display: none;
 }
-.changeDp-image-outer:hover::before, .changeDp-image-outer:hover .hover-camera{
+.changeDp-image-outer:hover::before,
+.changeDp-image-outer:hover .hover-camera {
   display: flex;
 }
-.confirmation-popup, .hover-camera{
+.confirmation-popup,
+.hover-camera {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
 }
 @media only screen and (max-width: 1024px) {
-  .main-container{
+  .main-container {
     grid-template-columns: 70px 1fr;
   }
 }
 @media only screen and (max-width: 640px) {
-  .main-container{
+  .main-container {
     grid-template-columns: 1fr;
   }
 }
 @media only screen and (max-width: 400px) {
-  .chats{
+  .chats {
     max-width: 270px;
   }
 }
