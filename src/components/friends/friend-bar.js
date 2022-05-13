@@ -1,25 +1,36 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useContext } from 'react'
 import { RiMessageFill } from 'react-icons/ri'
 import { IoMdRemove } from 'react-icons/io'
 import ConfirmationPopup from '../confirmation-popup'
 import { AnimatePresence } from 'framer-motion'
 import { db, authentication } from '../../firebase'
-import { doc, deleteDoc } from 'firebase/firestore'
+import { doc, deleteDoc, getDoc } from 'firebase/firestore'
 import getUsername from '../notifications/getUsername'
+import { ScreenContext, ChatContext } from '../../App'
 
 function FriendBar({ friend }) {
   const [visibility, setVisibility] = useState(false)
   const [displayName, setDisplayName] = useState('')
+  const { screen, setScreen } = useContext(ScreenContext)
+  const { chat, setChat } = useContext(ChatContext)
+
   let toggleVisibility = () => {
     setVisibility(false)
   }
 
   useEffect(async () => {
-    let name = await getUsername(friend.friendId)
-    setDisplayName(name)
+    setDisplayName(await getUsername(friend.friendId))
   }, [])
 
-  let removeFriend = async () => {
+  // this will return information about the user stored in the user collection
+  // right now this returns a promise
+  const getFriendInfo = async () => {
+    const docRef = doc(db, 'users', friend.friendId)
+    const docSnap = await getDoc(docRef)
+    return docSnap.data()
+  }
+
+  const removeFriend = async () => {
     const docRef = doc(
       db,
       'friends',
@@ -41,7 +52,13 @@ function FriendBar({ friend }) {
   }
 
   return (
-    <div className="friends-bar h-[68px] w-full bg-gray-chat-preview items-center flex gap-3">
+    <div
+      onClick={() => {
+        setChat(getFriendInfo())
+        setScreen('messages')
+      }}
+      className="friends-bar h-[68px] w-full bg-gray-chat-preview items-center flex gap-3"
+    >
       <img
         src="https://images.unsplash.com/photo-1527980965255-d3b416303d12?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=580&q=80"
         alt="other users dp"

@@ -32,7 +32,7 @@ export default function InnerChatsContainer() {
 
   return (
     <section className="main-chats-container sm:w-full h-full flex flex-col gap-2  pr-4 sm:pr-10 overflow-y-auto">
-      <ChatWith otherUser={chat} />
+      <ChatWith />
 
       {chats.length > 0 &&
         chats.map((element) => {
