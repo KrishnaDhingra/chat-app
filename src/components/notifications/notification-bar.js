@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import { IoMdRemove } from 'react-icons/io'
 import { BsCheck2 } from 'react-icons/bs'
 import acceptFriendRequest from './acceptFriendRequest'
@@ -6,11 +6,17 @@ import getUsername from './getUsername'
 import deleteNotification from './deleteNotification'
 
 function NotificationBar({ notification }) {
+  const [sentByUsername, setSentByUsername] = useState('')
+
+  useEffect(async () => {
+    setSentByUsername(await getUsername(notification.from))
+  }, [])
+
   return (
     <div className="relative notification-bar h-[68px] w-full bg-gray-chat-preview items-center flex">
       <section className="h-full justify-center gap-1 flex flex-col grow">
         <span className="text-primary text-sm">
-          You've received a friend request from {notification.sentByUsername}
+          You've received a friend request from {sentByUsername}
         </span>
         <span className="text-xs text-secondary text-normal">
           1 January 10:01:10

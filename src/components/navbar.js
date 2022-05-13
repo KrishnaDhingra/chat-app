@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useContext } from 'react'
 import { Link } from 'react-router-dom'
 import { MdOutlineLogout } from 'react-icons/md'
 import { AiFillHome } from 'react-icons/ai'
@@ -8,13 +8,17 @@ import { IoNotificationsSharp } from 'react-icons/io5'
 import ConfirmationPopup from './confirmation-popup'
 import { logOut } from '../functions/logout.js'
 import { AnimatePresence } from 'framer-motion'
+import { ScreenContext } from '../App'
 
-export default function Navbar({ changeScreen }) {
+export default function Navbar() {
   const [visibility, setVisibility] = useState(false)
 
   let toggleVisibility = () => {
     setVisibility(false)
   }
+
+  const { screen, setScreen } = useContext(ScreenContext)
+
   return (
     <nav className="left-[-70px] sm:left-[0px] h-full w-[70px] sm:w-full bg-[#268D61] flex flex-col items-center gap-6 py-5 sm:rounded-l-md">
       <Link to="/">
@@ -22,13 +26,13 @@ export default function Navbar({ changeScreen }) {
       </Link>
       <Link to="/">
         <FaUserFriends
-          onClick={() => changeScreen('friends')}
+          onClick={() => setScreen('friends')}
           className="mt-4 hover:text-white hover:opacity-100 text-gray-300 text-xl font-bold opacity-70"
         />
       </Link>
       <Link to="/">
         <IoNotificationsSharp
-          onClick={() => changeScreen('notifications')}
+          onClick={() => setScreen('notifications')}
           className="hover:text-white hover:opacity-100 text-gray-300 text-xl font-bold opacity-70"
         />
       </Link>

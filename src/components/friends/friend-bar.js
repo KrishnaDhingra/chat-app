@@ -16,7 +16,7 @@ function FriendBar({ friend }) {
 
   useEffect(async () => {
     let name = await getUsername(friend.friendId)
-    setDisplayName(name.displayName)
+    setDisplayName(name)
   }, [])
 
   let removeFriend = async () => {

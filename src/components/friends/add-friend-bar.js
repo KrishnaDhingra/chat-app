@@ -5,7 +5,7 @@ import { db, authentication } from '../../firebase'
 import { doc, getDoc } from 'firebase/firestore'
 
 function AddFriendBar({ user }) {
-  const [exists, setExists] = useState(false)
+  const [exists, setExists] = useState()
   useEffect(() => {
     let checkFriend = async () => {
       const docRef = doc(
@@ -18,12 +18,15 @@ function AddFriendBar({ user }) {
       const docSnap = await getDoc(docRef)
       if (docSnap.exists()) {
         setExists(true)
-        return
+      } else {
+        setExists(false)
       }
-      setExists(false)
     }
-    return () => checkFriend()
-  }, [])
+    return () => {
+      checkFriend()
+      console.log(exists)
+    }
+  })
 
   return (
     <div className="relative friends-bar h-[68px] w-full bg-gray-chat-preview items-center flex gap-3">
