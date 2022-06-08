@@ -22,11 +22,8 @@ function AddFriendBar({ user }) {
         setExists(false)
       }
     }
-    return () => {
-      checkFriend()
-      console.log(exists)
-    }
-  })
+    checkFriend()
+  }, [])
 
   return (
     <div className="relative friends-bar h-[68px] w-full bg-gray-chat-preview items-center flex gap-3">

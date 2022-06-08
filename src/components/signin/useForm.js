@@ -1,45 +1,35 @@
-import { useState, useEffect } from 'react';
-import { signInWithEmailAndPassword } from 'firebase/auth';
-import { db } from '../../firebase';
-import { authentication } from '../../firebase';
-import {
-  collection,
-  onSnapshot,
-  doc, 
-  setDoc
-} from 'firebase/firestore'
+import { useState, useEffect } from 'react'
+import { signInWithEmailAndPassword } from 'firebase/auth'
+import { db } from '../../firebase'
+import { authentication } from '../../firebase'
 
 const useForm = (validate, email, password) => {
+  const [errors, setErrors] = useState({})
+  const [isSubmitting, setSubmitting] = useState(false)
 
-  const [errors, setErrors] = useState({});
-  const [ isSubmitting, setSubmitting ] = useState(false)
-
-  const handleSubmit = e => {
-    e.preventDefault();
+  const handleSubmit = (e) => {
+    e.preventDefault()
     let values = {
       email: email,
-      password: password
+      password: password,
     }
     setSubmitting(true)
-    setErrors(validate(values));
-  };
+    setErrors(validate(values))
+  }
 
-  useEffect(
-    () => {
-      if (Object.keys(errors).length === 0 && isSubmitting) {
-        signInWithEmailAndPassword(authentication, email, password)
-          .then(credential => {
-            console.log("User signed in")
-          })
-          .catch(error => {
-            console.log(error.message)
-          })
-      }
-    },
-    [errors]
-  );
+  useEffect(() => {
+    if (Object.keys(errors).length === 0 && isSubmitting) {
+      signInWithEmailAndPassword(authentication, email, password)
+        .then((credential) => {
+          console.log('User signed in')
+        })
+        .catch((error) => {
+          console.log(error.message)
+        })
+    }
+  }, [errors])
 
-  return { handleSubmit, errors };
-};
+  return { handleSubmit, errors }
+}
 
-export default useForm;
+export default useForm

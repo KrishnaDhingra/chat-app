@@ -75,7 +75,10 @@ function FriendBar({ friend }) {
           <RiMessageFill />
         </div>
         <div
-          onClick={() => setVisibility(true)}
+          onClick={(e) => {
+            e.stopPropagation()
+            setVisibility(true)
+          }}
           className="bg-red-700 rounded-[50%] p-[0.7rem] hover:bg-red-800"
         >
           <IoMdRemove className="text-black" />
